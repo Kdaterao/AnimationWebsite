@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Dark_Switch from './switch'
-import {Linktype} from './data'
+import {Linktype} from '../data'
 
 
 
