@@ -1,7 +1,7 @@
 'use client';
 import "./globals.css";
 import Navbar from './components/navbar'
-import { linklist, pastworkarray, Linktype, pastworktype } from './data';
+import { linklist} from './data';
 
 
 

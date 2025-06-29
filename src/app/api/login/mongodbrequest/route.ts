@@ -1,9 +1,7 @@
-
-
 import clientPromise from "./mongodbconnect";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
 
         const client = await clientPromise;
         const db = client.db("animationdb");
@@ -17,5 +15,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         _id: video._id.toString(),
         }));
 
-        return res.json(videos);
+        return NextResponse.json(videos);
 }

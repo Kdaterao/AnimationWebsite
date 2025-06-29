@@ -4,16 +4,20 @@
 
 
 :root {
-  --background: #ffffff;
+  --background: #dff1ff;
   --foreground: #ffffff;
-  --color-variableblue: #b3f7ff;
-  --color-variablebluedark:#a0dde4;
-  --color-variablepurple: #a08cfb;
+  --color-variableblue: #77e5d1;
+  --color-variablebluedark:#68c0ca;
+  --color-variablepurple: #1990cb;
   
 }
 
 .dark{
-    --background:#000000;
+    --background:#374e5f;
+    --foreground: #33d0ae;
+    --color-variableblue: #befff2;
+    --color-variablebluedark:#273348;
+    --color-variablepurple: #5f628d;
 }
 
 .invisible-scrollbar::-webkit-scrollbar {
