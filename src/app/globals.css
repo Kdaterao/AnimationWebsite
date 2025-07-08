@@ -3,33 +3,60 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
+/*===========================================================================================================================*/
 :root {
-  --background: #dff1ff;
-  --foreground: #ffffff;
-  --color-variableblue: #77e5d1;
-  --color-variablebluedark:#68c0ca;
-  --color-variablepurple: #1990cb;
+  --background: #f0f0f0;
+  --foreground: #002525;
+  --color-titletext: #999898;
+  --color-variableblue: #e5e5e5;
+  --color-variablebluedark:#bababa;
+  --color-variablepurple: #f0f0f0;
   
 }
 
 .dark{
-    --background:#374e5f;
-    --foreground: #33d0ae;
-    --color-variableblue: #befff2;
-    --color-variablebluedark:#273348;
-    --color-variablepurple: #5f628d;
+    --background:#8d98b3;
+    --foreground: #f2f2f2;
+    --color-titletext: #78707e;
+    --color-variableblue: #99a5c0;
+    --color-variablebluedark:#566072;
+    --color-variablepurple: #3f4256;
 }
 
-.invisible-scrollbar::-webkit-scrollbar {
+/*===========================================================================================================================*/
+
+.invisible-scrollbar::-webkit-scrollbar{
   display: none;
 }
 
+/*===========================================================================================================================*/
+
+.styled-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-track {
+  width: 12px;
+  display:none;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-variablebluedark);
+  border-radius: 6px;         
+}
+
+/*===========================================================================================================================*/
 
 *{
 @apply transition-colors duration-200
 }
 
+/*===========================================================================================================================*/
 @theme{
+  --breakpoint-4lg: 118.75rem;
+  --breakpoint-3lg: 93.75rem;
+  --breakpoint-2lg: 78.75rem;
+  --breakpoint-2md: 56.25rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -37,7 +64,7 @@
   --font-browserwindow:"Rubik Iso", system-ui;
 }
 
-
+/*===========================================================================================================================*/
 
 body {
   background: var(--background);

@@ -1,7 +1,8 @@
 
-//this is the default codee that shows all of the capabilities for a clouflare worker 
+
 interface Env {
   animationbucket: R2Bucket;
+  AUTH_KEY_SECRET: string;
 }
 
 
@@ -30,6 +31,7 @@ export default {
        headers.set("Access-Control-Allow-Origin", "*");
 
        return new Response(object.body, { headers });
+      
 
       default:
         return new Response("Method Not Allowed", {
