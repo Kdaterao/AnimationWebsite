@@ -5,21 +5,8 @@ import EmailForm from './components/form'
 import Aboutme from './components/aboutme'
 import Photoaboutme from './components/aboutmephoto'
 import {useState, useEffect} from 'react'
+import {video_type, coordinates} from './data'
 
-interface video_type {
-   _id: string;
-   videokey: string;
-   title: string;
-   description: string;
-   thumbnailkey: string;
-   objectkey:string;
-}
-
-interface coordinates {
-
-  x:number
-  y:number
-}
 
 
 export default function Home() {
@@ -31,6 +18,7 @@ export default function Home() {
     .then(res => res.json())
     .then((data) => {setworklist(data as video_type[])});
   }, []);
+
   //---------------------- handles the intial position of the components based on the window area
   const[videoposition, changevideoposition] = useState<coordinates>({x:600, y:90})
   const[formposition, changeformposition] = useState<coordinates>({x:110, y:950})
@@ -105,21 +93,24 @@ export default function Home() {
 
   
   function handlemousedown(changeposition:React.Dispatch<React.SetStateAction<coordinates>>){
-    console.log()
     function changecoordinates(e: MouseEvent){
-        changeposition(currentstate => ({x: currentstate.x + (e.movementX), y:currentstate.y + (e.movementY)})) };
-        console.log('about', aboutmeposition)
-        console.log('photo',photoaboutmeposition)
-        console.log('video',videoposition)
-        console.log('form',formposition)
-        console.log('footer',footerposition)
-        function handlemouseup(){
+        changeposition(currentstate => ({x: currentstate.x + (e.movementX), y:currentstate.y + (e.movementY)}))
+    };
+
+    function handlemouseup(){
       document.removeEventListener('mousemove', changecoordinates)
       document.removeEventListener('mouseup', handlemouseup)
-      
     };
-      document.addEventListener("mousemove", changecoordinates)
-      document.addEventListener("mouseup", handlemouseup)
+
+
+    document.addEventListener("mousemove", changecoordinates)
+    document.addEventListener("mouseup", handlemouseup)
+
+    console.log('about', aboutmeposition)
+    console.log('photo',photoaboutmeposition)
+    console.log('video',videoposition)
+    console.log('form',formposition)
+    console.log('footer',footerposition)
   };
 
   
