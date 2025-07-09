@@ -9,18 +9,17 @@ function Navbar(){
 
 
 return(
-    <div className ='flex flex-col '>
-        <div className ='h-2'></div>
-        <div className='flex flex-row-reverse'>
-            <div className='basis-3/16'></div>
-            <div className = 'h-10 md:w-1/6 max-w-24 bg-[var(--color-variableblue)] rounded-full flex flew-row justify-center transition delay-100 duration-100 ease-in-out hover:scale-110'>
+    <div className ='h-15 flex flex-col justify-end '>
+        <div className = ' rounded-full flex flew-row  transition delay-100 duration-100 ease-in-out hover:scale-110 gap-5 ml-5 lg:gap-30 md:ml-40'>
+
                 <Windowbuttonbar></Windowbuttonbar>
-                <div className ='flex flex-col'>
+
+                <div className ='flex flex-col rounded-xl'>
                     <Dark_Switch></Dark_Switch>
                 </div>
             </div>
-        </div>
     </div>
+
 )
 }
 

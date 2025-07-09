@@ -2,15 +2,8 @@ import {useRef, useEffect, useState} from 'react'
 import Tabbar from './tabbar'
 
 import Workcolumn from './workcolumn';
+import {video_type} from '../data'
 
-interface video_type {
-   _id: string;
-   videokey: string;
-   title: string;
-   description: string;
-   thumbnailkey: string;
-   objectkey:string;
-}
 
 function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_type[], handlemousedown:() => void}){
 
@@ -31,7 +24,7 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
        useEffect(() => {
             async function returnvideos({videos}:{videos:video_type[]}){
             const videolist = await Promise.all(
-                videos.map(async ({_id, videokey, title, description, thumbnailkey, objectkey}) => {
+                videos.map(async ({_id, videokey, title, description, thumbnailkey}) => {
                     const imagefetch = await fetch(`${r2worker}/${thumbnailkey}`, { method: "GET" });
                     const blob = await imagefetch.blob();
                     const thumbnailUrl = URL.createObjectURL(blob);
@@ -40,7 +33,6 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
                         videokey,
                         title,
                         description,
-                        objectkey,
                         thumbnailkey: thumbnailUrl
 
                     };
@@ -60,7 +52,7 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
         },[currentvideo]);
 
         return (
-            <div onMouseDown ={() => handlemousedown}  className = 'h-98 md:h-150 lg:h-200 w-screen max-w-150  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl'  >
+            <div id ='videocomponent' onMouseDown ={() => handlemousedown}  className = 'h-98 md:h-150 lg:h-200 w-screen max-w-150  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl'  >
                 <div>
                     <Tabbar handlemousedown = {handlemousedown} message = ''></Tabbar>
                 </div>

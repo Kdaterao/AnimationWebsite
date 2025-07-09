@@ -1,14 +1,6 @@
 import {useState, useEffect} from 'react';
 import  Row_WorkColumn from './Row_WorkColumn';
-
-interface video_type {
-   _id: string;
-   videokey: string;
-   title: string;
-   description: string;
-   thumbnailkey: string;
-   objectkey:string;
-}
+import {video_type, placeholderarray} from '../data'
 
 
 function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type[], child_changevideo:(videokey:string,title:string) => void}){
@@ -21,18 +13,16 @@ function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type
         }
     }, [pastworkarray]);
 
-
-    const placeholderarray:video_type[] = [{_id:'a', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'a'},{_id:'b', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'b'},{_id:'c', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'c'},{_id:'d', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'d'}];
-
+    
     if(arrayreturned){
         return( 
         <div className='relative flex flex-col gap-10'>
-                {pastworkarray.map(({title, description, thumbnailkey, objectkey, videokey}:{title:string, description:string, thumbnailkey:string,  objectkey:string, videokey:string}) => <Row_WorkColumn key = {objectkey} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo} />)}
+                {pastworkarray.map(({title, description, thumbnailkey, _id, videokey}:{title:string, description:string, thumbnailkey:string,  _id:string, videokey:string}) => <Row_WorkColumn key = {_id} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo} />)}
         </div>
     ) } else {
         return(
         <div className='relative flex flex-col gap-10'>
-                {placeholderarray.map(({title, description, thumbnailkey, objectkey, videokey}:{title:string, description:string, thumbnailkey:string,  objectkey:string, videokey:string}) => <Row_WorkColumn key = {objectkey} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo}/>)}
+                {placeholderarray.map(({title, description, thumbnailkey, _id, videokey}:{title:string, description:string, thumbnailkey:string,  _id:string, videokey:string}) => <Row_WorkColumn key = {_id} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo}/>)}
         </div>
         )
     }

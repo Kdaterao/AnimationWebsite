@@ -18,7 +18,7 @@ function Windowbuttonbar(){
         };
 
         return(
-                <button onClick={ () => Windowbuttonfunction(divname)}  className ='rounded-xl w-20 md:w-35  bg-[var(--color-variableblue)] font-bold  text-sm md:text-base hover:-translate-y-2 shadow-2xl'>{buttonname}</button>
+                <button onClick={ () => Windowbuttonfunction(divname)}  className ='rounded-xl w-20 md:w-35 md:p-3  bg-[var(--color-variableblue)] hover:bg-[var(--color-variablebluedark)] font-bold  text-sm md:text-base hover:-translate-y-2 shadow-2xl'>{buttonname}</button>
             )
         };
 
@@ -28,7 +28,7 @@ function Windowbuttonbar(){
 
     
     return (    
-    <div className ='flex flex-row gap-10'>
+    <div className ='flex flex-row gap-5 lg:gap-10'>
         {componentlist.map(({_id, divname, buttonname}:{_id:string, divname:string, buttonname:string}) => <Windowbutton key={_id} divname={divname} buttonname = {buttonname}/>)}
     </div>
     )   

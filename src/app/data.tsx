@@ -1,22 +1,19 @@
 
 
-
-
 export interface video_type {
    _id: string;
    videokey: string;
    title: string;
    description: string;
    thumbnailkey: string;
-   objectkey:string;
 }
-
 
 export interface coordinates {
 
-  x:number;
-  y:number;
+  x:number
+  y:number
 }
+
 
 
 interface componentlisttype {
@@ -28,10 +25,10 @@ interface componentlisttype {
 //--------------------------------------------
 
 export const placeholderarray:video_type[] = [
-  {_id:'a', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'a'},
-  {_id:'b', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'b'},
-  {_id:'c', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'c'},
-  {_id:'d', videokey:'0', title:'loading', description:'loading', thumbnailkey:'globe.svg', objectkey:'d'}
+  {_id:'a', videokey:'animation_1.mp4', title:'loading', description:'loading', thumbnailkey:'globe.svg'},
+  {_id:'b', videokey:'/25_1.mp4', title:'loading', description:'loading', thumbnailkey:'globe.svg'},
+  {_id:'c', videokey:'/25_1.mp4', title:'loading', description:'loading', thumbnailkey:'globe.svg'},
+  {_id:'d', videokey:'/25_1.mp4', title:'loading', description:'loading', thumbnailkey:'globe.svg'}
 ];
 
 
