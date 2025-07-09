@@ -1,7 +1,7 @@
 'use client';
 import "./globals.css";
 import Navbar from './components/navbar'
-import { linklist} from './data';
+
 
 
 
@@ -14,7 +14,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
     <html lang="en" className ='group-[transition-colors duration-10000] invisible-scrollbar'>
       <body>
             <div id = "root" className ='fixed w-full z-3'>
-                <Navbar links={linklist}/>
+                <Navbar/>
             </div>
             <div className='absolute top-0'>
             {children}

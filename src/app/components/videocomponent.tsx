@@ -12,7 +12,7 @@ interface video_type {
    objectkey:string;
 }
 
-function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_type[], handlemousedown:Function}){
+function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_type[], handlemousedown:() => void}){
 
        const r2worker:string = 'https://r2-worker.akdaterao.workers.dev'
        const [url, setthumburl] = useState<video_type[]>([]);

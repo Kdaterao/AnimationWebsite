@@ -1,7 +1,7 @@
 import Tabbar from './tabbar';
 
 
-function Aboutme({handlemousedown}:{handlemousedown:Function}){
+function Aboutme({handlemousedown}:{handlemousedown:() => void}){
 
 
         return (

@@ -1,21 +1,10 @@
-import Link from 'next/link'
+
 import Dark_Switch from './switch'
-import {Linktype} from '../data'
 
 
+function Navbar(){
 
 
-function Navbar({links} : {links:Linktype[]}){
-
-
-function Navbarlink({filepath, name}: {filepath: string, name: string}){
-    return(
-  
-        <Link href = {filepath} className = "btn text-white bg-[var(--color-variablepurple)] hover:bg-sky-700  basis-10 p-2 md:p-3 text-center rounded-4xl text-base md:text-xl">
-        {name}
-        </Link>
-    )
-}
 
 
 return(

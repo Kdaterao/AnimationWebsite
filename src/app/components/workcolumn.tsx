@@ -11,7 +11,7 @@ interface video_type {
 }
 
 
-function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type[], child_changevideo:Function}){
+function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type[], child_changevideo:(videokey:string,title:string) => void}){
 
     const [arrayreturned, changearray] = useState<boolean>(false);
 
@@ -32,7 +32,7 @@ function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type
     ) } else {
         return(
         <div className='relative flex flex-col gap-10'>
-                {placeholderarray.map(({title, description, thumbnailkey, objectkey, videokey}:{title:string, description:string, thumbnailkey:string,  objectkey:string, videokey:string}) => <Row_WorkColumn key = {objectkey} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo} />)}
+                {placeholderarray.map(({title, description, thumbnailkey, objectkey, videokey}:{title:string, description:string, thumbnailkey:string,  objectkey:string, videokey:string}) => <Row_WorkColumn key = {objectkey} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo}/>)}
         </div>
         )
     }

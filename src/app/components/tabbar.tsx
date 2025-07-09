@@ -2,7 +2,7 @@
 
 
 
-function Tabbar ({handlemousedown, message}:{handlemousedown:Function, message:string}) {
+function Tabbar ({handlemousedown, message}:{handlemousedown:() => void, message:string}) {
 
     return(
             <div>
@@ -11,9 +11,9 @@ function Tabbar ({handlemousedown, message}:{handlemousedown:Function, message:s
                     <div className ='h-full basis-1/3 flex flex-row justify-end gap-3'>
                         <div className ='h-full basis-1/3  flex flex-row-reverse gap-3'>
                             <div className='w-5 h-full'></div>
-                            <img src = 'x.png' className='  h-1/2 '/>
-                            <img src = 'square.png' className=' h-1/2'/>
-                            <img src = '-.png' className=' h-2/3'/>
+                            <img src = '/x.png' alt = 'x.png'  className='h-1/2'/>
+                            <img src = '/square.png' alt = 'square.png'  className=' h-1/2'/>
+                            <img src = '/-.png' alt = '-.png'  className=' h-2/3'/>
                         </div>
                     </div>
                 </div>

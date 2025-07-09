@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 function Dark_Switch(){
-    const [Darkstate,changestate] = useState<Boolean>(false);
+    const [Darkstate,changestate] = useState<boolean>(false);
     return(
 
         <div className ='h-8 w-20 relative '>
