@@ -15,12 +15,12 @@
 }
 
 .dark{
-    --background:#8d98b3;
+    --background:#181818;
     --foreground: #f2f2f2;
     --color-titletext: #78707e;
-    --color-variableblue: #99a5c0;
-    --color-variablebluedark:#566072;
-    --color-variablepurple: #3f4256;
+    --color-variableblue: #3b3b3b;
+    --color-variablebluedark:#242424;
+    --color-variablepurple: #202020;
 }
 
 /*===========================================================================================================================*/

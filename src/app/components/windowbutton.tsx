@@ -14,6 +14,7 @@ function Windowbuttonbar(){
             } else {
                 element.style.transition = "opacity 0.4s ease";
                 element.style.opacity = '100';
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
             };
         };
 

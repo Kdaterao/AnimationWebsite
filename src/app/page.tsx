@@ -119,16 +119,16 @@ export default function Home() {
 
   return (
     <>
-        <div style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute' }}>
+        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute' }}>
           <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)}/>
         </div>
-        <div style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute' }}>
+        <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:0 }}>
           <Photoaboutme handlemousedown = {() => handlemousedown(changephotoaboutmeposition)} />
         </div>
-        <div style ={{ left: videoposition.x, top: videoposition.y, position:'absolute' }}>
+        <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:0 }}>
           <Videoplayer src = '/25_1.mp4' videos = {worklist}   handlemousedown = {() => handlemousedown(changevideoposition)} />
         </div>
-        <div style ={{ left: formposition.x, top: formposition.y, position:'absolute' }}>
+        <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:0 }}>
           <EmailForm  handlemouseformdown = {() => handlemousedown(changeformposition)}></EmailForm>
         </div>
         <div style ={{ left: footerposition.x, top: footerposition.y, position:'absolute' }}>
