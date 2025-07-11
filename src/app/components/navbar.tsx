@@ -1,7 +1,7 @@
-
+'use client'
 import Dark_Switch from './switch'
 import Windowbuttonbar from './windowbutton'
-
+import Link from 'next/link'
 
 function Navbar(){
 
@@ -16,6 +16,9 @@ return(
 
                 <div className ='flex flex-col rounded-xl'>
                     <Dark_Switch></Dark_Switch>
+                </div>
+                <div>
+                    <Link href = '/portal'>Admin</Link>
                 </div>
             </div>
     </div>

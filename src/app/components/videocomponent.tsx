@@ -52,7 +52,7 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
         },[currentvideo]);
 
         return (
-            <div  onMouseDown ={() => handlemousedown}  className = 'h-98 md:h-150 lg:h-200 w-screen max-w-150  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl'  >
+            <div  onMouseDown ={() => handlemousedown}  className = 'h-98 md:h-150 lg:h-200 w-screen max-w-150  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl select-none'  >
                 <div>
                     <Tabbar handlemousedown = {handlemousedown} message = 'Featured Works'></Tabbar>
                 </div>

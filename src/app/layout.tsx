@@ -5,11 +5,11 @@ import Navbar from './components/navbar'
 
 
 
+     
 
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) 
-{
- 
+{ 
   return (
     <html lang="en" className ='group-[transition-colors duration-10000] invisible-scrollbar'>
       <body>

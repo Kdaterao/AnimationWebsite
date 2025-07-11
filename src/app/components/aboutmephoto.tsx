@@ -8,7 +8,7 @@ function Photoaboutme({handlemousedown}:{handlemousedown:() => void}){
 
 
         return (
-            <div id ='socials' className = 'h-40 sm:h-45 md:h-55 lg:h-60 w-60 sm:w-65 md:w-70 2md:w-80 2lg:w-100 xl:w-120 flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl' >
+            <div  className = 'h-40 sm:h-45 md:h-55 lg:h-60 w-60 sm:w-65 md:w-70 2md:w-80 2lg:w-100 xl:w-120 flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl' >
                 <Tabbar handlemousedown = {handlemousedown} message='Socials' ></Tabbar>
                 <div className = 'flex flex-row gap-7'>
                     <a href="https://www.tiktok.com/@delectablepaint?lang=en" target="_blank" rel="noopener noreferrer">
