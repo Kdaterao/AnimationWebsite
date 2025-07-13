@@ -3,8 +3,6 @@ import GithubProvider from "next-auth/providers/github"
 import {User} from 'next-auth'
 
 
-
-
 export const authOptions = {
 
   providers: [
@@ -27,7 +25,6 @@ export const authOptions = {
 }
 
 }
-
 export default NextAuth(authOptions)
 
 export const handler = NextAuth(authOptions);
