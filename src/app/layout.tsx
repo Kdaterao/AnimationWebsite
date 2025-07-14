@@ -1,6 +1,5 @@
 'use client';
 import "./globals.css";
-import Navbar from './components/navbar'
 
 
 
@@ -11,12 +10,11 @@ import Navbar from './components/navbar'
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) 
 { 
   return (
-    <html lang="en" className ='group-[transition-colors duration-10000] invisible-scrollbar'>
+    <html lang="en" className ='group-[transition-colors duration-10000] invisible-scrollbar overflow-x-clip'>
       <body>
-            <div id = "root" className ='fixed w-full z-3'>
-                <Navbar/>
-            </div>
-            <div className='absolute top-0'>
+                
+
+            <div >
             {children}
             </div>
       </body>

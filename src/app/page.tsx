@@ -6,7 +6,7 @@ import Aboutme from './components/aboutme'
 import Photoaboutme from './components/aboutmephoto'
 import {useState, useEffect} from 'react'
 import {video_type, coordinates} from './data'
-
+import Navbar from'./components/navbar'
 
 
 export default function Home() {
@@ -118,7 +118,19 @@ export default function Home() {
   
 
   return (
-    <>
+  <>
+
+    <div className ='fixed w-full z-3'>
+                <Navbar/>
+    </div>
+
+    <div className ='w-[1920px] h-[1080px] z-0 fixed top-0 justify-self-center'>
+        <img src ='animatedbackground_2.gif'></img>
+    </div>
+
+
+    
+    <div className='z-1 w-full h-full overflow-scroll invisible-scrollbar'>
         <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute' }}>
           <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)}/>
         </div>
@@ -134,7 +146,13 @@ export default function Home() {
         <div style ={{ left: footerposition.x, top: footerposition.y, position:'absolute' }}>
           <div className='h-2 w-2'></div>
         </div>
-    </>
+     </div>
+
+
+
+     <div className ='w-full h-10 bg-[var(--color-variableblue)] fixed bottom-0 z-3'/>
+  </>
+
 
   );
 }
