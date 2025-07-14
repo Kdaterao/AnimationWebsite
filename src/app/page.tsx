@@ -125,7 +125,7 @@ export default function Home() {
     </div>
 
     <div className ='w-[1920px] h-[1080px] z-0 fixed top-0 justify-self-center'>
-        <img src ='animatedbackground_2.gif'></img>
+        <img src ='animatedbackground_2.gif' alt ='animatedbackground_2.gif'></img>
     </div>
 
 

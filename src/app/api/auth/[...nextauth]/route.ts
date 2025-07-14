@@ -1,9 +1,9 @@
-import NextAuth from "next-auth"
+import NextAuth, {type NextAuthOptions} from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import {User} from 'next-auth'
 
 
-export const authOptions = {
+const authOptions: NextAuthOptions = {
 
   providers: [
     GithubProvider({
@@ -16,7 +16,7 @@ export const authOptions = {
   callbacks: {
   async signIn({ user}:{user:User}) {
 
-    if (user.email === process.env.GITHUBEMAIL) {
+    if (user.email === process.env.GITHUBEMAIL!) {
       return true
     } else {
       return false
@@ -25,7 +25,7 @@ export const authOptions = {
 }
 
 }
-export default NextAuth(authOptions)
 
-export const handler = NextAuth(authOptions);
+
+const handler = NextAuth(authOptions);
 export {handler as GET, handler as POST};

@@ -2,7 +2,7 @@
 
 
 
-function Tabbar ({handlemousedown, message}:{handlemousedown:() => void, message:string}) {
+function Tabbar ({handlemousedown}:{handlemousedown:() => void}) {
 
     return(
             <div>

@@ -8,6 +8,16 @@ export interface video_type {
    thumbnailkey: string;
 }
 
+export interface video_type_portal {
+   _id: string;
+   imagepath: string;
+   title: string;
+   description: string;
+   thumbnailkey: string;
+   videokey: string;
+}
+
+
 export interface coordinates {
 
   x:number

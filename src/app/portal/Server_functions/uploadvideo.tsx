@@ -14,10 +14,10 @@ export default async function UploadVideo(event: React.SyntheticEvent){
         };
 
         const videoData = new FormData();
-        videoData.append("file", target.video.files?.[0]!);
+        videoData.append("file", target.video.files?.[0] ?? "");
 
         const thumbnailData = new FormData();
-        thumbnailData.append("file", target.thumbnail.files?.[0]!);
+        thumbnailData.append("file", target.thumbnail.files?.[0] ?? "");
 
         const characterstofind = ['#', '?', '&', '/', '|', '\\', '*'];
 
@@ -26,8 +26,7 @@ export default async function UploadVideo(event: React.SyntheticEvent){
             if (target.thumbnail?.files?.[0]?.name!.includes(x)){
                 file_is_good = false;
                 break;
-            }
-            if (target.video?.files?.[0]?.name!.includes(x) ){
+            } else if (target.video?.files?.[0]?.name!.includes(x) ){
                 file_is_good = false;
                 break;
             }
@@ -40,7 +39,7 @@ export default async function UploadVideo(event: React.SyntheticEvent){
             const result_r2_video = await fetch('/api/login/r2request',{
 
                 method: 'POST',
-                headers: {"objectkey":target.video?.files?.[0]?.name! },
+                headers: {"objectkey":target.video?.files?.[0]?.name ?? "" },
                 body: videoData,
                 
             }).then(r => r.json());
@@ -48,7 +47,7 @@ export default async function UploadVideo(event: React.SyntheticEvent){
             const result_r2_thumbnail = await fetch('/api/login/r2request',{
 
                 method: 'POST',
-                headers: {"objectkey":target.thumbnail?.files?.[0]?.name! },
+                headers: {"objectkey":target.thumbnail?.files?.[0]?.name ?? "" },
                 body: thumbnailData,
                 
             }).then(r => r.json());

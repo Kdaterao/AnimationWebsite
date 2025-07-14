@@ -33,7 +33,7 @@ function EmailForm({handlemouseformdown}:{handlemouseformdown:() => void}){
 
     return (
         <div  className= ' w-75 sm:w-85 md:w-100 2md:w-125 lg:w-150 2lg:w-175 rounded-4xl pb-3 bg-[var(--color-variableblue)] self-center flex flex-col transition duration-75 hover:translate-y-2 shadow-2xl' onMouseDown = {() => handlemouseformdown}>
-                <Tabbar handlemousedown = {handlemouseformdown} message = 'Contact Me'></Tabbar>
+                <Tabbar handlemousedown = {handlemouseformdown} ></Tabbar>
             <div>
                 <form onSubmit= {handleOnSubmit} className ='flex flex-col gap-5 p-5'>
                     <div className = 'justify-center flex flex-row gap-5'>
