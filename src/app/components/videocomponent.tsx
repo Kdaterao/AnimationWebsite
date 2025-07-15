@@ -22,7 +22,11 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
        }
 
        useEffect(() => {
-            async function returnvideos({videos}:{videos:video_type[]}){
+            async function returnvideos(videos:video_type[]){
+                if (!Array.isArray(videos)) {
+                    console.warn("videos is not an array:", videos);
+                return;
+                }
             const videolist = await Promise.all(
                 videos.map(async ({_id, videokey, title, description, thumbnailkey}) => {
                     const imagefetch = await fetch(`${r2worker}/${thumbnailkey}`, { method: "GET" });
@@ -40,7 +44,7 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
             );
             setthumburl(videolist);
             }
-            returnvideos({ videos });
+            returnvideos( videos );
 
         },[videos])
         

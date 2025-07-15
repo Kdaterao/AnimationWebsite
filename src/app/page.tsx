@@ -124,14 +124,14 @@ export default function Home() {
                 <Navbar/>
     </div>
 
-    <div className ='w-[1920px] h-[1080px] z-0 fixed top-0 justify-self-center'>
-        <img src ='animatedbackground_2.gif' alt ='animatedbackground_2.gif'></img>
+    <div className ='w-[1920px] h-[1080px] z-0 fixed top-0 justify-self-center noselect'>
+        <img src ='websitebackground_3.apng' alt ='animatedbackground_2.gif'></img>
     </div>
 
 
     
     <div className='z-1 w-full h-full overflow-scroll invisible-scrollbar'>
-        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute' }}>
+        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:0 }}>
           <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)}/>
         </div>
         <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:0 }}>

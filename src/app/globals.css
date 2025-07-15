@@ -44,9 +44,14 @@
   background-color: var(--color-variablebluedark);
   border-radius: 6px;         
 }
+/*===========================================================================================================================*/
 
-
-
+.noselect {
+  user-select: none;
+  -webkit-user-select: none; /* Safari compatibility */
+  -moz-user-select: none; /* Firefox compatibility */
+  pointer-events: none; /* Disables click events and prevents dragging */
+}
 /*===========================================================================================================================*/
 
 *{

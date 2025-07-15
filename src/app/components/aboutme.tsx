@@ -5,7 +5,7 @@ function Aboutme({handlemousedown}:{handlemousedown:() => void}){
 
 
         return (
-            <div className = 'h-47 sm:h-55 md:h-80 lg:h-90 w-90 sm:w-120 md:w-160 3lg:w-120  flex flex-col  bg-[var(--color-variableblue)] rounded-4xl  self-center hover:-translate-y-2 shadow-2xl' >
+            <div className = 'h-47 sm:h-55 md:h-80 lg:h-90 w-90 sm:w-120 md:w-160 3lg:w-120  flex flex-col  bg-[var(--color-variableblue)] rounded-4xl  self-center hover:-translate-y-2 shadow-2xl ' >
                 <Tabbar handlemousedown = {handlemousedown}></Tabbar>
                 <div className = 'flex flex-col gap-4 basis-4/5 overflow-y-auto styled-scrollbar'>
                     <div></div>
