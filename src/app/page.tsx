@@ -36,13 +36,13 @@ export default function Home() {
       changeformposition({x:110, y:950});
       changefooterposition({x:0, y:1900});
     }
-    else if (window.innerWidth < 1760 && window.innerWidth > 1500){
+    else if (window.innerWidth < 1760 && window.innerWidth > 1620){
       changeaboutmeposition({x:5, y:200})
       changephotoaboutmeposition({x:950, y:945})
       changevideoposition({x:495, y:90});
       changeformposition({x:110, y:950});
       changefooterposition({x:0, y:1900});
-     } else if (window.innerWidth < 1500 && window.innerWidth > 1200){
+     } else if (window.innerWidth < 1620 && window.innerWidth > 1200){
       changeaboutmeposition({x:320, y:70})
       changephotoaboutmeposition({x:860, y:1400})
       changevideoposition({x:50, y:550});
@@ -120,7 +120,7 @@ export default function Home() {
   return (
   <>
 
-    <div className ='fixed w-full z-3'>
+    <div className ='fixed w-2 z-3'>
         <Navbar/>
     </div>
 

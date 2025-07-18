@@ -73,12 +73,12 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
                                 </div>
                                 <div className ='h-1'></div>
                                 <div className ='flex flex-row gap-5 invisible md:visible'>
-                                    <img src='/channel.png' className ='h-10 w-10 rounded-full bg-[var(--color-variablepurple)]'/>
+                                    <img src='/channel.png' alt='/channel.png' className ='h-10 w-10 rounded-full bg-[var(--color-variablepurple)]'/>
                                     <h3 className='mt-1 text-xl'>DelectablePaint</h3>
                                 </div>
                                 <div className ='h-1'></div>
                                 <div className ='invisible md:visible w-full md:h-20 lg:h-28 xl:h-30 bg-[var(--color-variablepurple)] rounded-2xl shadow-md'>
-                                    <p className ='text-center text-[var(--color-titletext)]'>{currentdescription}</p>
+                                    <p className ='text-center text-[var(--color-textdescription)]'>{currentdescription}</p>
                                 </div>
                             </div>
                             <div className ='h-0.5 bg-[var(--color-variablepurple)] col-span-8 row-span-3 row-start-5 col-start-2 md:col-start-8 md:col-span-3 md:row-span-full'></div>

@@ -41,12 +41,12 @@ function EmailForm({handlemouseformdown}:{handlemouseformdown:() => void}){
                         <input type = 'email' name='email' placeholder ='email' className = 'bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)] w-1/2 rounded'></input>
                         <input  type = 'string' name='personname' placeholder ='name' className='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  w-1/2 rounded '></input>
                     </div>
-                    <textarea  name='emailparagraph' placeholder ='paragraph'  rows={5} className ='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  max-h-3/4 rounded' style={{ maxHeight: '200px'}}></textarea>  
+                    <textarea  name='emailparagraph' placeholder =''  rows={5} className ='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  max-h-3/4 rounded' style={{ maxHeight: '200px'}}></textarea>  
                     <button type='submit' className='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  hover:bg-[var(--color-variablepurple)]  w-fit p-3 rounded-3xl'>submit!</button>
                 </form>
             </div>
             <div className='flex flex-row justify-center'>
-                <p className ='text-[var(--color-titletext)]'>My Email is delectablepaint@gmail.com</p>
+                <p className =''>My Email is delectablepaint@gmail.com</p>
             </div>
         </div>
     );
