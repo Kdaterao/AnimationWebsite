@@ -11,6 +11,7 @@
   --color-variableblue: #e5e5e5;
   --color-variablebluedark:#bababa;
   --color-variablepurple: #f0f0f0;
+  --color-textdescription:#afacac ;
   
 }
 
@@ -21,6 +22,7 @@
     --color-variableblue: #3b3b3b;
     --color-variablebluedark:#242323;
     --color-variablepurple: #302e2e;
+    --color-textdescription:#78707e ;
 }
 
 /*===========================================================================================================================*/
@@ -33,6 +35,7 @@
 
 .styled-scrollbar::-webkit-scrollbar {
   width: 12px;
+  
 }
 
 .styled-scrollbar::-webkit-scrollbar-track {

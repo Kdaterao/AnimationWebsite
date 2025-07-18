@@ -3,7 +3,7 @@ import  Row_WorkColumn from './Row_WorkColumn';
 import {video_type, placeholderarray} from '../data'
 
 
-function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type[], child_changevideo:(videokey:string,title:string) => void}){
+function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type[], child_changevideo:(videokey:string,title:string, description:string) => void}){
 
     const [arrayreturned, changearray] = useState<boolean>(false);
 
@@ -16,14 +16,16 @@ function Workcolumn({pastworkarray, child_changevideo}:{pastworkarray:video_type
     
     if(arrayreturned){
         return( 
-        <div className='relative flex flex-col gap-10'>
-                {pastworkarray.map(({title, description, thumbnailkey, _id, videokey}:{title:string, description:string, thumbnailkey:string,  _id:string, videokey:string}) => <Row_WorkColumn key = {_id} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo} />)}
-        </div>
+
+            <div className='flex flex-col gap-10 mt-3 '>
+                    {pastworkarray.map(({title, description, thumbnailkey, _id, videokey}:{title:string, description:string, thumbnailkey:string,  _id:string, videokey:string}) => <Row_WorkColumn key = {_id} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo} />)}
+            </div>
+
     ) } else {
         return(
-        <div className='relative flex flex-col gap-10'>
-                {placeholderarray.map(({title, description, thumbnailkey, _id, videokey}:{title:string, description:string, thumbnailkey:string,  _id:string, videokey:string}) => <Row_WorkColumn key = {_id} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo}/>)}
-        </div>
+            <div className='flex flex-col gap-10 mt-3'>
+                    {placeholderarray.map(({title, description, thumbnailkey, _id, videokey}:{title:string, description:string, thumbnailkey:string,  _id:string, videokey:string}) => <Row_WorkColumn key = {_id} title = {title} description = {description} imagepath = {thumbnailkey} videokey = {videokey} child_changevideo = {child_changevideo}/>)}
+            </div>
         )
     }
 

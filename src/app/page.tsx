@@ -29,14 +29,14 @@ export default function Home() {
 
   function handleResize(){
 
-    if (window.innerWidth > 1700){
+    if (window.innerWidth > 1760){
       changeaboutmeposition({x:30, y:200})
       changephotoaboutmeposition({x:950, y:945})
-      changevideoposition({x:600, y:90});
+      changevideoposition({x:525, y:90});
       changeformposition({x:110, y:950});
       changefooterposition({x:0, y:1900});
     }
-    else if (window.innerWidth < 1700 && window.innerWidth > 1500){
+    else if (window.innerWidth < 1760 && window.innerWidth > 1500){
       changeaboutmeposition({x:5, y:200})
       changephotoaboutmeposition({x:950, y:945})
       changevideoposition({x:495, y:90});
@@ -121,7 +121,7 @@ export default function Home() {
   <>
 
     <div className ='fixed w-full z-3'>
-                <Navbar/>
+        <Navbar/>
     </div>
 
     <div className ='w-[1920px] h-[1080px] z-0 fixed top-0 justify-self-center noselect'>
@@ -131,16 +131,16 @@ export default function Home() {
 
     
     <div className='z-1 w-full h-full overflow-scroll invisible-scrollbar'>
-        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:0 }}>
+        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)}/>
         </div>
-        <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:0 }}>
+        <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <Photoaboutme handlemousedown = {() => handlemousedown(changephotoaboutmeposition)} />
         </div>
-        <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:0 }}>
+        <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <Videoplayer src = '/25_1.mp4' videos = {worklist}   handlemousedown = {() => handlemousedown(changevideoposition)} />
         </div>
-        <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:0 }}>
+        <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <EmailForm  handlemouseformdown = {() => handlemousedown(changeformposition)}></EmailForm>
         </div>
         <div style ={{ left: footerposition.x, top: footerposition.y, position:'absolute' }}>
@@ -150,7 +150,7 @@ export default function Home() {
 
 
 
-     <div className ='w-full h-10 bg-[var(--color-variableblue)] fixed bottom-0 z-3'/>
+     <div className ='w-full h-15 bg-[var(--color-variableblue)] fixed bottom-0 z-3'/>
   </>
 
 

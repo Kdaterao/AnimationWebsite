@@ -17,10 +17,12 @@
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "resend": "^4.5.2"
+    "resend": "^4.5.2",
+    "webpack": "^5.100.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -8,10 +8,12 @@ function Windowbuttonbar(){
         
             const element:HTMLElement = document.getElementById(divname)!;
             if (element.style.opacity === "100") {
+                element.style.pointerEvents = 'none';
                 element.style.transition = "opacity 0.1s";
                 element.style.opacity = '0';
                 
             } else {
+                element.style.pointerEvents = 'all';
                 element.style.transition = "opacity 0.4s ease";
                 element.style.opacity = '100';
                 element.scrollIntoView({ behavior: 'smooth', block: 'center' });
