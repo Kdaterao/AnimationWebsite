@@ -40,10 +40,10 @@ function Tabbar ({handlemousedown,divname}:{handlemousedown:() => void,divname:s
 
     return(
             <div>
-                <div className = 'flex flex-row-reverse h-7 sm:h-9 md:h-11 lg:h-12 2lg:h-14 xl:h-17 w-full rounded-t-xl bg-[var(--color-variablepurple)] select-none' onMouseDown ={() => handlemousedown()}>
+                <div className = 'flex flex-row-reverse h-14 md:h-15 xl:h-17 w-full rounded-t-xl bg-[var(--color-variablepurple)] select-none ' onMouseDown ={() => handlemousedown()}>
                     
                     <div className ='h-full basis-1/3 flex flex-row justify-end gap-3'>
-                        <div className ='h-full basis-1/3  flex flex-row-reverse mr-0.5'>
+                        <div className ='h-full basis-1/3  flex flex-row-reverse mr-0.5 cursor-pointer'>
                             <Xcomponent></Xcomponent>
                         </div>
                     </div>

@@ -21,7 +21,7 @@ function Windowbuttonbar(){
         };
 
         return(
-                <button onClick={ () => Windowbuttonfunction(divname)}  className ='rounded-xl w-20 md:w-35 md:p-3  bg-[var(--color-variableblue)] hover:bg-[var(--color-variablebluedark)] font-bold  text-sm md:text-base hover:-translate-y-2 shadow-2xl'>{buttonname}</button>
+                <button onClick={ () => Windowbuttonfunction(divname)}  className ='rounded-xl w-20 md:w-35 md:p-3  bg-[var(--color-variableblue)] hover:bg-[var(--color-variablebluedark)] font-bold  text-sm md:text-base hover:-translate-y-2 shadow-2xl cursor-pointer'>{buttonname}</button>
             )
         };
 

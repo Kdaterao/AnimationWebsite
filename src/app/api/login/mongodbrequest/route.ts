@@ -34,6 +34,7 @@ export async function GET() {
         return NextResponse.json(videos);
         } finally {
                 await clientpromise.close();
+                console.log("Mongodb connection closed");
         }
 }
 

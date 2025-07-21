@@ -44,7 +44,7 @@ export default function Home() {
       changefooterposition({x:0, y:1900});
      } else if (window.innerWidth < 1620 && window.innerWidth > 1200){
       changeaboutmeposition({x:320, y:70})
-      changephotoaboutmeposition({x:860, y:1400})
+      changephotoaboutmeposition({x:800, y:1400})
       changevideoposition({x:50, y:550});
       changeformposition({x:30, y:1450});
       changefooterposition({x:0, y:1900});
@@ -56,27 +56,27 @@ export default function Home() {
       changefooterposition({x:0, y:1900});
     } else if(window.innerWidth < 1025 && window.innerWidth > 900){
       changeaboutmeposition({x:100, y:70})
-      changephotoaboutmeposition({x:520, y:1100})
+      changephotoaboutmeposition({x:580, y:1140})
       changevideoposition({x:0, y:460});
       changeformposition({x:10, y:1230});
       changefooterposition({x:0, y:1600});
     } else if(window.innerWidth < 900 && window.innerWidth > 765){
-      changeaboutmeposition({x:100, y:70})
-      changephotoaboutmeposition({x:490, y:1100})
-      changevideoposition({x:0, y:460});
-      changeformposition({x:60, y:1230});
+      changeaboutmeposition({x:30, y:80})
+      changephotoaboutmeposition({x:150, y:1080})
+      changevideoposition({x:0, y:450});
+      changeformposition({x:5, y:1500});
       changefooterposition({x:0, y:1600});
     } else if(window.innerWidth < 765 && window.innerWidth > 600){
-      changeaboutmeposition({x:120, y:90})
-      changephotoaboutmeposition({x:380, y:770})
-      changevideoposition({x:35, y:330});
-      changeformposition({x:10, y:900});
-      changefooterposition({x:0, y:1300});
-    } else if(window.innerWidth < 600 && window.innerWidth > 0){
       changeaboutmeposition({x:30, y:80})
-      changephotoaboutmeposition({x:230, y:740})
+      changephotoaboutmeposition({x:150, y:920})
       changevideoposition({x:0, y:310});
-      changeformposition({x:5, y:920});
+      changeformposition({x:5, y:1330});
+      changefooterposition({x:0, y:1450});
+    }  else if(window.innerWidth < 600 && window.innerWidth > 0){
+      changeaboutmeposition({x:30, y:80})
+      changephotoaboutmeposition({x:60, y:780})
+      changevideoposition({x:0, y:310});
+      changeformposition({x:5, y:1250});
       changefooterposition({x:0, y:1350});
     }; 
     

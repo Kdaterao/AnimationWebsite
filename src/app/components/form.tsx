@@ -32,7 +32,7 @@ function EmailForm({handlemouseformdown}:{handlemouseformdown:() => void}){
 
 
     return (
-        <div  className= ' w-75 sm:w-85 md:w-100 2md:w-125 lg:w-150 2lg:w-175 rounded-4xl pb-3 bg-[var(--color-variableblue)] self-center flex flex-col transition duration-75 hover:translate-y-2 shadow-2xl' onMouseDown = {() => handlemouseformdown}>
+        <div  className= 'w-85 md:w-100 2md:w-125 lg:w-150 2lg:w-175 rounded-4xl pb-3 bg-[var(--color-variableblue)] self-center flex flex-col transition duration-75 hover:translate-y-2 shadow-2xl' onMouseDown = {() => handlemouseformdown}>
                 <Tabbar handlemousedown = {handlemouseformdown} divname='form' ></Tabbar>
             <div>
                 <p className='text-5xl font-bold ml-5 mt-2'>Contact Me</p>
@@ -42,7 +42,7 @@ function EmailForm({handlemouseformdown}:{handlemouseformdown:() => void}){
                         <input  type = 'string' name='personname' placeholder ='name' className='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  w-1/2 rounded '></input>
                     </div>
                     <textarea  name='emailparagraph' placeholder =''  rows={5} className ='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  max-h-3/4 rounded' style={{ maxHeight: '200px'}}></textarea>  
-                    <button type='submit' className='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  hover:bg-[var(--color-variablepurple)]  w-fit p-3 rounded-3xl'>submit!</button>
+                    <button type='submit' className='bg-[var(--color-variablebluedark)] text-[var(--color-variableblue)]  hover:bg-[var(--color-variablepurple)]  w-fit p-3 rounded-3xl cursor-pointer'>submit!</button>
                 </form>
             </div>
             <div className='flex flex-row justify-center'>

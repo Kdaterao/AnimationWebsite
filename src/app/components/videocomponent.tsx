@@ -7,14 +7,17 @@ import {video_type} from '../data'
 
 function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_type[], handlemousedown:() => void}){
 
+       //variables and useState variables used in the whole component
        const r2worker:string = 'https://r2-worker.akdaterao.workers.dev'
        const [url, setthumburl] = useState<video_type[]>([]);
        const [currentvideo, changevideo] = useState<string>(src);
        const [currenttitle, changetitle] = useState<string>('Animation made with linework')
        const [currentdescription, changedescription] = useState<string>('This is a video ig')
 
+
+       //function which handles changing videos(this is drilled into the workcolumn since it using useState variables)
        async function child_changevideo(newvalue:string, newtitle:string, description:string) {
-        changevideo('/loading.mp4') //this is the placeholder video that is used until the actual video is loaded in
+        changevideo('/loading.mp4') //placeholder video
         const fetchvideo = await fetch(`${r2worker}/${newvalue}`)
         const blob = await fetchvideo.blob();
         const blobURL = URL.createObjectURL(blob);
@@ -23,10 +26,12 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
         changedescription(description);
        }
 
+
+       //takes in the list of videokeys,thumbnailkeys,titles,descriptions, ect.. from the mongodb fetch
        useEffect(() => {
             async function returnvideos(videos:video_type[]){
                 if (!Array.isArray(videos)) {
-                    console.warn("videos is not an array:", videos);
+                    console.warn("Your mongodb fetch is not working(this error is reported from the returnvideos function)", videos);
                 return;
                 }
             const videolist = await Promise.all(
@@ -49,7 +54,10 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
             returnvideos( videos );
 
         },[videos])
-        
+       
+
+
+        //required for playing videos
         const ref = useRef<HTMLVideoElement>(null);
         useEffect(() => {
             if (ref.current) {
@@ -57,36 +65,58 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
             }
         },[currentvideo]);
 
+
+
+
+
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+
         return (
-            <div  onMouseDown ={() => handlemousedown}  className = 'h-105 md:h-150 2md:h-160 lg:h-175 2lg:h-185 3lg:h-190 4lg:h-205 w-screen min-w-135 max-w-140   md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 pb-3flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl select-none'  >
-                <div>
-                    <Tabbar handlemousedown = {handlemousedown} divname = 'videocomponent' ></Tabbar>
-                </div>
-                <div className ='h-4'></div>
-                <div className = 'h-13/16 w-full flex flew-row justify-start'>
-                    <div className='w-10'></div>
-                        <div className ='grid grid-cols-10 grid-rows-6 gap-15  md:gap-3'>
-                            <div className ='col-start-2 row-start-1 col-span-8 row-span-1 md:col-start-0 md:col-span-7'>
-                                <video ref={ref} src={currentvideo} muted  controls loop playsInline className = 'brightness-80 object-scale-down rounded-xl'/>
-                                <div className ='flex flew-row w-full h-13   invisible md:visible'>
-                                    <h3 className='md:text-4xl overflow-clip mt-3'>{currenttitle}</h3>
+            <div  onMouseDown ={() => handlemousedown}  className = 'flex flex-col \ h-110 sm:h-140 md:h-150 2md:h-160 lg:h-175 2lg:h-185 3lg:h-190 4lg:h-205 \ w-125 xsm:w-140 sm:w-160 md:w-screen  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 \ bg-[var(--color-variableblue)] \ rounded-4xl \ self-center hover:-translate-y-2 \ shadow-2xl \ select-none'>
+
+                {/*imported tabbar component*/}
+                <Tabbar handlemousedown = {handlemousedown} divname = 'videocomponent' ></Tabbar>
+
+
+                <div className = 'flex flew-row \ h-13/16 w-full \ justify-start \ mt-6 \ overflow-y-scroll overflow-x-hidden styled-scrollbar'>
+                        {/*left side padding*/}
+                        <div className ='w-0 md:w-10'></div>
+
+                        {/*defines grid and columns*/}
+                        <div className ='grid \ grid-cols-10 \ grid-rows-6 \ gap-15 md:gap-3'>
+
+                            {/*Video and description div*/}
+                            <div className ='col-start-1 col-span-9 xsm:col-span-full \ row-start-1 row-span-10 \ md:col-start-0 md:col-span-7 \ ml-5 mr-5 md:ml-0 md:mr-0'>
+                                <div className ='w-5'/>
+                                <video ref={ref} src={currentvideo} muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-xl'/>
+                                
+                                <div className ='flex flew-row \ w-full \ h-13'>
+                                    <h3 className='text-4xl overflow-clip mt-3'>{currenttitle}</h3>
                                 </div>
-                                <div className ='h-1'></div>
-                                <div className ='flex flex-row gap-5 invisible md:visible'>
-                                    <img src='/channel.png' alt='/channel.png' className ='h-10 w-10 rounded-full bg-[var(--color-variablepurple)]'/>
-                                    <h3 className='mt-1 text-xl'>DelectablePaint</h3>
+
+
+                                <div className ='flex flex-row \ gap-5 \ mt-1'>
+                                    <img src='/channel.png' alt='/channel.png' className ='h-10 \ w-10 \ rounded-full \ bg-[var(--color-variablepurple)]'/>
+                                    <h3 className='mt-1 \ text-xl'>DelectablePaint</h3>
                                 </div>
-                                <div className ='h-1'></div>
-                                <div className ='invisible md:visible w-full md:h-20 lg:h-28 xl:h-30 bg-[var(--color-variablepurple)] rounded-2xl shadow-md'>
+
+                                <div className ='w-full \ h-23 md:h-20 lg:h-28 xl:h-30 \ mt-1 \ rounded-2xl \ bg-[var(--color-variablepurple)] \ shadow-md'>
                                     <p className ='text-center text-[var(--color-textdescription)]'>{currentdescription}</p>
                                 </div>
+                                
+                                <div className='h-10'></div>
                             </div>
-                            <div className ='h-0.5 bg-[var(--color-variablepurple)] col-span-8 row-span-3 row-start-5 col-start-2 md:col-start-8 md:col-span-3 md:row-span-full'></div>
-                            <div className ='col-span-8 row-span-3 row-start-5 col-start-2 md:col-start-8 md:col-span-3 md:row-span-full overflow-y-scroll styled-scrollbar'>
+                            
+
+                            {/*video list div(the first div is the line above the video column)*/}
+                            <div className ='mt-55 ml-1 xsm:mt-65 sm:mt-75 md:mt-0 md:ml-0 \ h-0.5 \ bg-[var(--color-variablepurple)] \ col-start-1 col-span-full md:col-start-8 md:col-span-3 \ row-start-5 md:row-span-full'></div>
+                            <div className ='mt-60 ml-12 xsm:mt-70 sm:mt-80 sm:ml-15 md:mt-0 md:ml-0 \ col-start-1 col-span-9 md:col-start-8 md:col-span-3 \ row-start-5 row-span-1  md:row-span-full'>
                                 <Workcolumn pastworkarray = {url} child_changevideo = {child_changevideo}/>
                             </div>
+
+                            
                         </div>
-                    <div className='w-10'></div>
                 </div>
             </div>
         )

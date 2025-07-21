@@ -22,19 +22,68 @@ function Photoaboutme({handlemousedown}:{handlemousedown:() => void}){
             )
         }
 
-        return (
-            <div  className = 'h-35  md:h-48 w-60 sm:w-65  flex flex-col  bg-[var(--color-variableblue)] rounded-4xl self-center hover:-translate-y-2 shadow-2xl' >
-                <Tabbar handlemousedown = {handlemousedown} divname ='socials'></Tabbar>
-                <div className = 'flex flex-row gap-7'>
-                    <a href="https://www.tiktok.com/@delectablepaint?lang=en" target="_blank" rel="noopener noreferrer" className ='w-20 h-20 md:w-25 md:h-25 hover:-translate-y-2 mt-3'>
-                        <Tiktok></Tiktok>
+  return (
+    <div className="w-100 3lg:w-120 ">
+
+      <Tabbar handlemousedown={handlemousedown} divname='socials'/>
+
+      <div className='bg-[var(--color-variableblue)] shadow-md rounded-b-3xl pb-10'>
+
+        <div className="max-w-80 ml-5 mb-7  ">
+            <div className='h-3'></div>
+            <div className="w-full flex items-center justify-between bg-[var(--color-variablepurple)] px-4 py-3 rounded-full border border-[#5f6368]">
+            <span className="text-gray-400">My Socials</span>
+            <button className="text-blue-400 hover:underline">Search</button>
+            </div>
+        </div>
+        
+        <div className='overflow-y-scroll h-50 mr-1 ml-5 md:ml-10 styled-scrollbar '>
+            <div className="max-w-3xl mx-auto space-y-8">
+                <div>
+                <div className ='flex flex-row'>
+                    <div className='mr-1 mt-1 h-5 w-5'>
+                        <Tiktok/>
+                    </div>
+                    <a
+                        href="https://www.tiktok.com/@delectablepaint?lang=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 text-xl hover:underline"
+                    >
+                        TikTok: @delectablepaint
                     </a>
-                        <a href="https://www.instagram.com/coconutwood85/" target="_blank" rel="noopener noreferrer" className= 'w-20 h-20 md:w-25 md:h-25 hover:-translate-y-2 mt-3'>
-                            <Instagram></Instagram>
+                </div>
+                <p className="text-[var(--color-textdescription)]  text-sm">www.tiktok.com | @delectablepaint</p>
+                <p className="text-[var(--color-textdescription)] mt-1">
+                    Short form videos featuring creativity, artwork, and trends. Explore unique content and join the community.
+                </p>
+                </div>
+
+                <div>
+                    <div className='flex flex-row'>
+                        <div className='mr-2 mt-1 h-5 w-5'>
+                            <Instagram/>
+                        </div>
+                        <a
+                            href="https://www.instagram.com/coconutwood85/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 text-xl hover:underline"
+                        >
+                            Instagram: @coconutwood85
                         </a>
+                    </div>
+                    <p className="text-[var(--color-textdescription)] text-sm">www.instagram.com | @coconutwood85</p>
+                    <p className="text-[var(--color-textdescription)] mt-1">
+                        Visual storytelling through sketches, animations, and personal moments. Follow for creative inspiration.
+                    </p>  
                 </div>
             </div>
-        )
+        </div>
+      </div>
+    </div>
+  );
 }
+
 
 export default Photoaboutme

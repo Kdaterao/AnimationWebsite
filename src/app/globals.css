@@ -10,7 +10,7 @@
   --color-titletext: #aaa9a9;
   --color-variableblue: #e5e5e5;
   --color-variablebluedark:#bababa;
-  --color-variablepurple: #f0f0f0;
+  --color-variablepurple: #d1cece;
   --color-textdescription:#afacac ;
   
 }
@@ -67,6 +67,7 @@
   --breakpoint-3lg: 93.75rem;
   --breakpoint-2lg: 78.75rem;
   --breakpoint-2md: 56.25rem;
+  --breakpoint-xsm: 35rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

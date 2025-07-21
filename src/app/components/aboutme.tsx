@@ -5,9 +5,9 @@ function Aboutme({handlemousedown}:{handlemousedown:() => void}){
 
 
         return (
-            <div className = 'h-47 sm:h-55 md:h-80 lg:h-90 w-90 sm:w-120 md:w-160 3lg:w-120  flex flex-col  bg-[var(--color-variableblue)] rounded-4xl  self-center hover:-translate-y-2 shadow-2xl ' >
+            <div className = 'h-47 sm:h-55 md:h-80 lg:h-90 w-90 sm:w-120 md:w-160 3lg:w-120  pb-3 flex flex-col  bg-[var(--color-variableblue)] rounded-4xl  self-center hover:-translate-y-2 shadow-2xl ' >
                 <Tabbar handlemousedown = {handlemousedown} divname ='aboutme'></Tabbar>
-                <div className = 'flex flex-col gap-4 basis-4/5 overflow-y-auto styled-scrollbar'>
+                <div className = 'flex flex-col gap-4 basis-4/5 overflow-y-auto styled-scrollbar mr-1 ml-1'>
                     <div></div>
                     <div className ='flex flex-row '>
                         <h4 className ='text-5xl sm:text-6xl md:text-7xl 3lg:text-6xl select-none'> Hey, I make 2d animations</h4>
@@ -27,6 +27,7 @@ function Aboutme({handlemousedown}:{handlemousedown:() => void}){
                         </dl>
                     </div>
                 </div>
+                
             </div>
         )
 }
