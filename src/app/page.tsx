@@ -95,27 +95,16 @@ export default function Home() {
         changeposition(currentstate => ({x: currentstate.x + (e.movementX), y:currentstate.y + (e.movementY)}))
     };
 
-    function changecoordinates_mobile(e: TouchEvent){
-      const touch = e.touches[0];
-          changeposition(currentstate => ({x: currentstate.x + touch.clientX, y: currentstate.y + touch.clientY}))
-    };
 
     function handlemouseup(){
       document.removeEventListener('mousemove', changecoordinates_mouse)
       document.removeEventListener('mouseup', handlemouseup)
     };
     
-    function handletouchend(){
-        document.removeEventListener("touchstart", changecoordinates_mobile);
-        document.removeEventListener("touchend", handletouchend);
-    }
 
 
     document.addEventListener("mousemove", changecoordinates_mouse)
     document.addEventListener("mouseup", handlemouseup)
-
-    document.addEventListener("touchstart", changecoordinates_mobile);
-    document.addEventListener("touchend", handletouchend);
 
 
     console.log('about', aboutmeposition)
@@ -136,7 +125,7 @@ export default function Home() {
         <Navbar/>
     </div>
 
-    <div className ='w-[1920px] h-[900px] z-0 fixed top-0 justify-self-center noselect  backgrounddark:opacity-50'>
+    <div className ='w-[1920px] h-[900px] z-0 fixed top-0 justify-self-center noselect  backgrounddark:opacity-50 overflow-clip'>
         <img src ='websitebackground(test).gif' alt ='animatedbackground_2.gif'></img>
     </div>
 
