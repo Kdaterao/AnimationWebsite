@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-
+@custom-variant backgrounddark (&:where(.backgrounddark, .backgrounddark *));
 
 /*===========================================================================================================================*/
 :root {
-  --background: #f0f0f0;
+  --background: #181818;
   --foreground: #002525;
   --color-titletext: #aaa9a9;
   --color-variableblue: #e5e5e5;

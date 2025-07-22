@@ -27,16 +27,22 @@ function Photoaboutme({handlemousedown}:{handlemousedown:() => void}){
 
       <Tabbar handlemousedown={handlemousedown} divname='socials'/>
 
-      <div className='bg-[var(--color-variableblue)] shadow-md rounded-b-3xl pb-10'>
-
-        <div className="max-w-80 ml-5 mb-7  ">
-            <div className='h-3'></div>
-            <div className="w-full flex items-center justify-between bg-[var(--color-variablepurple)] px-4 py-3 rounded-full border border-[#5f6368]">
-            <span className="text-gray-400">My Socials</span>
-            <button className="text-blue-400 hover:underline">Search</button>
+      <div className='bg-[var(--color-variableblue)] shadow-md rounded-b-sm pb-3'>
+        <div  className="mb-7">
+            <div className=" w-7/8">
+                <div className='h-3'/>
+                <div className ='flex justify-between'>
+                    <div className="w-3/4 flex justify-between bg-[var(--color-variablepurple)] px-4 py-3 rounded-full  ml-3 ">
+                        <span className="text-gray-400">My Socials</span>
+                        <button className="text-blue-400 hover:underline">Search</button>
+                    </div>
+                    <img src='/channel.png' alt='/channel.png' className ='h-10 \ w-10 \ rounded-full \ bg-[var(--color-variablepurple)] '/>
+                </div>
+                
             </div>
+            <div className='h-1  bg-[var(--color-variablepurple)] mt-4'/>
         </div>
-        
+
         <div className='overflow-y-scroll h-50 mr-1 ml-5 md:ml-10 styled-scrollbar '>
             <div className="max-w-3xl mx-auto space-y-8">
                 <div>

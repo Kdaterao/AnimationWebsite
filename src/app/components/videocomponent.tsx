@@ -73,7 +73,7 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
         //------------------------------------------------------------------------------------------------------------------------------------------------------
 
         return (
-            <div  onMouseDown ={() => handlemousedown}  className = 'flex flex-col \ h-110 sm:h-140 md:h-150 2md:h-160 lg:h-175 2lg:h-185 3lg:h-190 4lg:h-205 \ w-125 xsm:w-140 sm:w-160 md:w-screen  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 \ bg-[var(--color-variableblue)] \ rounded-4xl \ self-center hover:-translate-y-2 \ shadow-2xl \ select-none'>
+            <div  onMouseDown ={() => handlemousedown}  className = 'flex flex-col \ h-110 sm:h-140 md:h-150 2md:h-160 lg:h-175 2lg:h-185 3lg:h-190 4lg:h-205 \ w-125 xsm:w-140 sm:w-160 md:w-screen  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 \ bg-[var(--color-variableblue)] \ rounded-sm \ self-center hover:-translate-y-2 \ shadow-2xl \ select-none'>
 
                 {/*imported tabbar component*/}
                 <Tabbar handlemousedown = {handlemousedown} divname = 'videocomponent' ></Tabbar>
