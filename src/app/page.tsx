@@ -113,7 +113,59 @@ export default function Home() {
     console.log('form',formposition)
     console.log('footer',footerposition)
   };
+  //---------------------------------------------------
 
+  const [windowsopen, changewindowsopen] = useState<number>(0);
+  const [windowidlist, addwindowid] = useState<string[]>([]);
+
+  
+
+
+  function Windowbuttonfunction(divname:string){
+        
+            const element:HTMLElement = document.getElementById(divname)!;
+            if (element.style.opacity === "100") {
+                element.style.pointerEvents = 'none';
+                element.style.transition = "opacity 0.1s";
+                element.style.opacity = '0';
+                changewindowsopen(windowsopen - 1)
+                console.log('minus')
+                
+                
+                const newlist = windowidlist.filter(x => x !== divname);
+                addwindowid(newlist);
+
+                //usestate doesnt update until after the function is finished so we gotta clone the list and use that 
+                if (newlist.length > 0){
+                const randomDiv = newlist[0];
+                const randomelement:HTMLElement = document.getElementById(randomDiv)!;
+                randomelement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+
+            } else {
+                element.style.pointerEvents = 'all';
+                element.style.transition = "opacity 0.4s ease";
+                element.style.opacity = '100';
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                changewindowsopen(windowsopen + 1)
+
+
+                const  currentlist = windowidlist
+                const newlist = currentlist.concat(divname)
+                addwindowid(newlist)
+            };
+        };
+        
+    useEffect(() =>{
+            if (windowsopen === 0 && document.documentElement.classList.toggle('backgrounddark')){
+                document.documentElement.classList.toggle('backgrounddark')
+   
+            } else if(windowsopen > 0 && !document.documentElement.classList.toggle('backgrounddark')){
+                document.documentElement.classList.toggle('backgrounddark')
+                handleResize();
+            }
+        },[windowsopen])
   
   
   
@@ -121,8 +173,8 @@ export default function Home() {
   return (
   <>
 
-    <div className ='fixed w-2 z-3'>
-        <Navbar/>
+    <div className ='fixed w-2 z-3 top-0 '>
+        <Navbar Windowbuttonfunction = {Windowbuttonfunction}/>
     </div>
     
     <div className ='w-full flex justify-center'>
@@ -133,24 +185,25 @@ export default function Home() {
 
 
     
-    <div className='z-1 w-full h-full overflow-scroll invisible-scrollbar'>
+    <div className='z-1 w-full h-full'>
         <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
-          <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)}/>
+          <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)} Windowbuttonfunction = {Windowbuttonfunction}/>
         </div>
         <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
-          <Photoaboutme handlemousedown = {() => handlemousedown(changephotoaboutmeposition)} />
+          <Photoaboutme handlemousedown = {() => handlemousedown(changephotoaboutmeposition)} Windowbuttonfunction = {Windowbuttonfunction} />
         </div>
         <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
-          <Videoplayer src = '/25_1.mp4' videos = {worklist}   handlemousedown = {() => handlemousedown(changevideoposition)} />
+          <Videoplayer src = '/25_1.mp4' videos = {worklist}   handlemousedown = {() => handlemousedown(changevideoposition)} Windowbuttonfunction = {Windowbuttonfunction} />
         </div>
         <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
-          <EmailForm  handlemouseformdown = {() => handlemousedown(changeformposition)}></EmailForm>
+          <EmailForm  handlemouseformdown = {() => handlemousedown(changeformposition)} Windowbuttonfunction = {Windowbuttonfunction}></EmailForm>
         </div>
         <div style ={{ left: footerposition.x, top: footerposition.y, position:'absolute' }}>
           <div className='h-2 w-2'></div>
         </div>
      </div>
 
+      <div className=' fixed z-3 bottom-0 h-10 min-w-screen bg-[var(--color-navbar)]'/>
   </>
 
 

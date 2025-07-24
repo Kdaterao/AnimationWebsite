@@ -3,21 +3,32 @@ import Dark_Switch from './switch'
 import Windowbuttonbar from './windowbutton'
 
 
-function Navbar(){
+function Navbar({Windowbuttonfunction}:{Windowbuttonfunction: (divname:string) => void}){
 
 
 
 
 return(
-    <div className ='h-15 flex flex-col justify-end '>
-        <div className = ' rounded-full flex flew-row   gap-5 ml-5 lg:gap-30 md:ml-40 z-3'>
+    <div className='flex flex-row backgrounddark:opacity-80'>
+        <div className ='h-3 flex flex-col justify-center-safe '>
 
-                <Windowbuttonbar></Windowbuttonbar>
-
-                <div className ='flex flex-col rounded-xl'>
-                    <Dark_Switch></Dark_Switch>
-                </div>
+            <div className = ' flex flew-row gap-5 z-3'>
+                    <div className ='w-0 xsm:w-10 md:w-20 lg:w-40 invisible backgrounddark:visible mt-4 backgrounddark:mt-1'>
+                        <div className='h-10 w-full  bg-[var(--color-navbar)]'></div>
+                    </div>
+                    <div className ='flex flex-row gap-8 md:gap-12  opacity-90'>
+                        <div className=' mt-4 backgrounddark:mt-1'>
+                        <Windowbuttonbar Windowbuttonfunction ={Windowbuttonfunction} />
+                        </div>
+                        <div className ='flex flex-col mt-5 backgrounddark:mt-2 '>
+                            <Dark_Switch></Dark_Switch>
+                        </div>
+                    </div>
+                    <div className ='w-0 xsm:min-w-screen invisible backgrounddark:visible mt-4 backgrounddark:mt-1'>
+                        <div className='h-10 w-full  bg-[var(--color-navbar)]'></div>
+                    </div>
             </div>
+        </div>
     </div>
 
 )

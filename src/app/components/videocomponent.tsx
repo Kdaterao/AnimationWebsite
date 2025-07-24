@@ -5,7 +5,7 @@ import Workcolumn from './workcolumn';
 import {video_type} from '../data'
 
 
-function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_type[], handlemousedown:() => void}){
+function Videoplayer({src, videos, handlemousedown,Windowbuttonfunction}:{src:string, videos:video_type[], handlemousedown:() => void,Windowbuttonfunction:(divname:string) => void}){
 
        //variables and useState variables used in the whole component
        const r2worker:string = 'https://r2-worker.akdaterao.workers.dev'
@@ -76,10 +76,10 @@ function Videoplayer({src, videos, handlemousedown}:{src:string, videos:video_ty
             <div  onMouseDown ={() => handlemousedown}  className = 'flex flex-col \ h-110 sm:h-140 md:h-150 2md:h-160 lg:h-175 2lg:h-185 3lg:h-190 4lg:h-205 \ w-125 xsm:w-140 sm:w-160 md:w-screen  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 \ bg-[var(--color-variableblue)] \ rounded-sm \ self-center hover:-translate-y-2 \ shadow-2xl \ select-none'>
 
                 {/*imported tabbar component*/}
-                <Tabbar handlemousedown = {handlemousedown} divname = 'videocomponent' ></Tabbar>
+                <Tabbar handlemousedown = {handlemousedown} divname = 'videocomponent' Windowbuttonfunction = {Windowbuttonfunction} ></Tabbar>
 
 
-                <div className = 'flex flew-row \ h-13/16 w-full \ justify-start \ mt-6 \ overflow-y-scroll overflow-x-hidden styled-scrollbar'>
+                <div className = 'flex flew-row \ h-13/16 w-full \ justify-start \ mt-6 \ overflow-y-scroll overflow-x-hidden styled-scrollbar '>
                         {/*left side padding*/}
                         <div className ='w-0 md:w-10'></div>
 

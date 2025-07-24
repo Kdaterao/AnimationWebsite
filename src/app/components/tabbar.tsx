@@ -2,24 +2,10 @@
 
 
 
-function Tabbar ({handlemousedown,divname}:{handlemousedown:() => void,divname:string}) {
+function Tabbar ({handlemousedown,divname, Windowbuttonfunction}:{handlemousedown:() => void,divname:string,Windowbuttonfunction:(divname:string) => void}) {
 
-        function Windowbuttonfunction(divname:string){
+
         
-            const element:HTMLElement = document.getElementById(divname)!;
-            if (element.style.opacity === "100") {
-                element.style.pointerEvents = 'none';
-                element.style.transition = "opacity 0.1s";
-                element.style.opacity = '0';
-                
-            } else {
-                element.style.pointerEvents = 'all';
-                element.style.transition = "opacity 0.4s ease";
-                element.style.opacity = '100';
-                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            };
-        };
-
         function Xcomponent(){
             return(
                     <svg
@@ -30,7 +16,7 @@ function Tabbar ({handlemousedown,divname}:{handlemousedown:() => void,divname:s
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className='h-3/4 hover:bg-[var(--color-variableblue)] hover:rounded text-[var(--color-textdescription)] hover:text-red-500 ' onClick={() => Windowbuttonfunction(divname) }>
+                            className='h-3/4 hover:bg-[var(--color-variableblue)] hover:rounded text-[var(--color-textdescription)] hover:text-orange-400 focus:text-orange-400  ' onClick={() => Windowbuttonfunction(divname) }>
                             <line x1="18" y1="6" x2="6" y2="18" />
                             <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>

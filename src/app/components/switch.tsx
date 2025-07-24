@@ -8,9 +8,9 @@ function Dark_Switch(){
     return(
 
         <div className ='h-8 w-20 relative '>
-            <label className ={`h-full w-full relative  rounded-full flex flex-none bg-[var(--color-variableblue)] ${Darkstate ? 'bg-[var(--color-variablebluedark)] opacity-50' : 'bg-none outline-1 opacity-90'}`}>
+            <label className ={`h-full w-full relative  rounded-full flex flex-none bg-none outline-[var(--color-variableblue)] outline-4 ${Darkstate ? '' : ''}`}>
                 <input type="checkbox" onClick={() => { changestate(!Darkstate); document.documentElement.classList.toggle('dark'); }} className='invisible h-full w-full'/>
-                <span className={`h-8 w-12  rounded-full justify-self-start bg-amber-50 transition duration-75 ease-in-out ${Darkstate ? '-translate-x-0' : '-translate-x-13'}`}></span>
+                <span className={`h-8 w-12  rounded-full justify-self-start bg-[var(--color-variableblue)] transition duration-75 ease-in-out ${Darkstate ? '-translate-x-0' : '-translate-x-13'}`}></span>
             </label>
         </div>
 

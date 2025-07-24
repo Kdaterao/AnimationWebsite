@@ -3,7 +3,7 @@
 import Tabbar from './tabbar';
 
 
-function EmailForm({handlemouseformdown}:{handlemouseformdown:() => void}){
+function EmailForm({handlemouseformdown,Windowbuttonfunction}:{handlemouseformdown:() => void,Windowbuttonfunction:(divname:string) => void}){
 
 
     async function handleOnSubmit(event: React.SyntheticEvent){
@@ -33,7 +33,7 @@ function EmailForm({handlemouseformdown}:{handlemouseformdown:() => void}){
 
     return (
         <div  className= 'w-85 md:w-100 2md:w-125 lg:w-150 2lg:w-175 rounded-sm pb-3 bg-[var(--color-variableblue)] self-center flex flex-col transition duration-75 hover:translate-y-2 shadow-2xl' onMouseDown = {() => handlemouseformdown}>
-                <Tabbar handlemousedown = {handlemouseformdown} divname='form' ></Tabbar>
+                <Tabbar handlemousedown = {handlemouseformdown} divname='form' Windowbuttonfunction = {Windowbuttonfunction} ></Tabbar>
             <div>
                 <p className='text-5xl font-bold ml-5 mt-2'>Contact Me</p>
                 <form onSubmit= {handleOnSubmit} className ='flex flex-col gap-5 p-5'>
