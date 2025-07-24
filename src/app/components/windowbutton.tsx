@@ -1,5 +1,5 @@
 import {componentlist} from '../data'
-import {useState, useEffect} from 'react'
+
 
 
 function Windowbuttonbar({Windowbuttonfunction}:{Windowbuttonfunction: (divname:string) => void}){
