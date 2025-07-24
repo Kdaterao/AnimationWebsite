@@ -9,7 +9,7 @@ function Photoaboutme({handlemousedown,Windowbuttonfunction}:{handlemousedown:()
 
 
   return (
-    <div className="w-100 3lg:w-120 ">
+    <div className=" w-95 xxsm:w-100 3lg:w-120 ">
 
       <Tabbar handlemousedown={handlemousedown} divname='socials'   Windowbuttonfunction = {Windowbuttonfunction}/>
 
