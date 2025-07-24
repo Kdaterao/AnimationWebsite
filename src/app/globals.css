@@ -69,6 +69,7 @@
   --breakpoint-2lg: 78.75rem;
   --breakpoint-2md: 56.25rem;
   --breakpoint-xsm: 35rem;
+  --breakpoint-xxsm:31rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

@@ -73,8 +73,8 @@ export default function Home() {
       changeformposition({x:5, y:1330});
       changefooterposition({x:0, y:1450});
     }  else if(window.innerWidth < 600 && window.innerWidth > 0){
-      changeaboutmeposition({x:30, y:80})
-      changephotoaboutmeposition({x:60, y:780})
+      changeaboutmeposition({x:15, y:80})
+      changephotoaboutmeposition({x:15, y:780})
       changevideoposition({x:0, y:310});
       changeformposition({x:5, y:1250});
       changefooterposition({x:0, y:1350});

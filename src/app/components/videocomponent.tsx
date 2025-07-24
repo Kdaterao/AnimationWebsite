@@ -73,7 +73,7 @@ function Videoplayer({src, videos, handlemousedown,Windowbuttonfunction}:{src:st
         //------------------------------------------------------------------------------------------------------------------------------------------------------
 
         return (
-            <div  onMouseDown ={() => handlemousedown}  className = 'flex flex-col \ h-110 sm:h-140 md:h-150 2md:h-160 lg:h-175 2lg:h-185 3lg:h-190 4lg:h-205 \ w-125 xsm:w-140 sm:w-160 md:w-screen  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 \ bg-[var(--color-variableblue)] \ rounded-sm \ self-center hover:-translate-y-2 \ shadow-2xl \ select-none'>
+            <div  onMouseDown ={() => handlemousedown}  className = 'flex flex-col \ h-110 xxsm:w-125 sm:h-140 md:h-150 2md:h-160 lg:h-175 2lg:h-185 3lg:h-190 4lg:h-205 \ w-110  xsm:w-140 sm:w-160 md:w-screen  md:max-w-250 lg:max-w-275 3lg:max-w-290 4lg:max-w-325 \ bg-[var(--color-variableblue)] \ rounded-sm \ self-center hover:-translate-y-2 \ shadow-2xl \ select-none'>
 
                 {/*imported tabbar component*/}
                 <Tabbar handlemousedown = {handlemousedown} divname = 'videocomponent' Windowbuttonfunction = {Windowbuttonfunction} ></Tabbar>
@@ -87,7 +87,7 @@ function Videoplayer({src, videos, handlemousedown,Windowbuttonfunction}:{src:st
                         <div className ='grid \ grid-cols-10 \ grid-rows-6 \ gap-15 md:gap-3'>
 
                             {/*Video and description div*/}
-                            <div className ='col-start-1 col-span-9 xsm:col-span-full \ row-start-1 row-span-10 \ md:col-start-0 md:col-span-7 \ ml-5 mr-5 md:ml-0 md:mr-0'>
+                            <div className ='col-start-1 col-span-8 xxsm:col-start-1 xxsm:col-span-9 xsm:col-span-full \ row-start-1 row-span-10 \ md:col-start-0 md:col-span-7 \ ml-5 mr-5 md:ml-0 md:mr-0'>
                                 <div className ='w-5'/>
                                 <video ref={ref} src={currentvideo} muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-xl'/>
                                 
