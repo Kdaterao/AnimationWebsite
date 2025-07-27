@@ -29,7 +29,7 @@ return(
                     </div>
             </div>
             <div className ='right-5 \ bottom-15 \ fixed \ visible backgrounddark:invisible '>
-                <img src='/channel.png' alt='/channel.png' className ='h-20 \ w-20 \ rounded-full \ bg-[var(--color-variablepurple)] \ outline-4 outline-[var(--color-variablepurple)]'/>
+                <img src='/channel.png' alt='/channel.png' className ='h-10 sm:h-20 \ w-10 sm:w-20 \ rounded-full \ bg-[var(--color-variablepurple)] \ outline-4 outline-[var(--color-variablepurple)]'/>
             </div>
         </div>
     </div>
