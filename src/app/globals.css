@@ -12,7 +12,9 @@
   --color-variablebluedark:#bababa;
   --color-variablepurple: #d1cece;
   --color-textdescription:#afacac ;
-  --color-navbar:#f8f8f8 ;
+  --color-navbar: rgba(248, 248, 248);           /* #f8f8f8 */
+  --color-navbar-t: rgba(248, 248, 248,0.6);           /* #f8f8f8 */
+  --color-outline: #242424;
 }
 
 .dark{
@@ -23,7 +25,9 @@
     --color-variablebluedark:#242323;
     --color-variablepurple: #302e2e;
     --color-textdescription:#78707e;
-    --color-navbar:#3b3b3b;
+    --color-navbar: rgba(59, 59, 59);              /* #3b3b3b */
+    --color-navbar-t: rgba(59, 59, 59,0.5);              /* #3b3b3b */
+    --color-outline: #ebe8e8;
 }
 
 /*===========================================================================================================================*/

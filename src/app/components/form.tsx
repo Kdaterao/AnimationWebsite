@@ -32,7 +32,7 @@ function EmailForm({handlemouseformdown,Windowbuttonfunction}:{handlemouseformdo
 
 
     return (
-        <div  className= 'w-85 md:w-100 2md:w-125 lg:w-150 2lg:w-175 rounded-sm pb-3 bg-[var(--color-variableblue)] self-center flex flex-col transition duration-75 hover:translate-y-2 shadow-2xl' onMouseDown = {() => handlemouseformdown}>
+        <div  className= 'w-85 md:w-100 2md:w-125 lg:w-150 2lg:w-175 rounded-sm pb-3 bg-[var(--color-variableblue)] self-center flex flex-col transition duration-75 hover:translate-y-2 shadow-2xl outline-2 outline-[var(--color-outline)]' onMouseDown = {() => handlemouseformdown}>
                 <Tabbar handlemousedown = {handlemouseformdown} divname='form' Windowbuttonfunction = {Windowbuttonfunction} ></Tabbar>
             <div>
                 <p className='text-5xl font-bold ml-5 mt-2'>Contact Me</p>

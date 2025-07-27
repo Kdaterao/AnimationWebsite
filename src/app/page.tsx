@@ -178,8 +178,8 @@ export default function Home() {
     </div>
     
     <div className ='w-full flex justify-center'>
-      <div className ='w-[1920px] h-[900px] z-0 fixed top-0  noselect  backgrounddark:opacity-50'>
-          <img src ='websitebackground(test).gif' alt ='animatedbackground_2.gif'></img>
+      <div className ='w-[1920px] h-[900px] z-0 fixed bottom-10  noselect  backgrounddark:opacity-50'>
+          <img src ='websitebackbackground_2_v2.apng' alt ='animatedbackground_2.gif'></img>
       </div>
     </div>
 
@@ -203,7 +203,7 @@ export default function Home() {
         </div>
      </div>
 
-      <div className=' fixed z-3 bottom-0 h-10 min-w-screen bg-[var(--color-navbar)]'/>
+      <div className=' fixed z-3 bottom-0 h-10 min-w-screen bg-[var(--color-navbar)]  outline-2'/>
   </>
 
 
