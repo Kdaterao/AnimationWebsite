@@ -110,8 +110,8 @@ function Videoplayer({src, videos, handlemousedown,Windowbuttonfunction}:{src:st
                             
 
                             {/*video list div(the first div is the line above the video column)*/}
-                            <div className ='mt-55 ml-1 xsm:mt-65 sm:mt-75 md:mt-0 md:ml-0 \ h-0.5 \ bg-[var(--color-variablepurple)] \ col-start-1 col-span-full md:col-start-8 md:col-span-3 \ row-start-5 md:row-span-full'></div>
-                            <div className ='mt-60 ml-12 xsm:mt-70 sm:mt-80 sm:ml-15 md:mt-0 md:ml-0 \ col-start-1 col-span-9 md:col-start-8 md:col-span-3 \ row-start-5 row-span-1  md:row-span-full'>
+                            <div className ='mt-40 xxsm:mt-55 xxsm:ml-1 xsm:mt-65 sm:mt-75 md:mt-0 md:ml-0 \ h-0.5 \ bg-[var(--color-variablepurple)] \ col-start-1 col-span-full md:col-start-8 md:col-span-3 \ row-start-5 md:row-span-full'></div>
+                            <div className ='mt-45 xxsm:mt-60 xxsm:ml-12 xsm:mt-70 sm:mt-80 sm:ml-15 md:mt-0 md:ml-0 \ col-start-1 col-span-9 md:col-start-8 md:col-span-3 \ row-start-5 row-span-1  md:row-span-full'>
                                 <Workcolumn pastworkarray = {url} child_changevideo = {child_changevideo}/>
                             </div>
 
