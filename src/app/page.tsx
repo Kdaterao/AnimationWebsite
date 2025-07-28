@@ -25,7 +25,7 @@ export default function Home() {
   const[aboutmeposition, changeaboutmeposition] = useState<coordinates>({x:30, y:200})
   const[photoaboutmeposition, changephotoaboutmeposition] = useState<coordinates>({x:950, y:945})
   const[footerposition, changefooterposition] = useState<coordinates>({x:0, y:1900})
-
+  
 
   function handleResize(){
 
@@ -115,8 +115,8 @@ export default function Home() {
   };
   //---------------------------------------------------
 
-  const [windowsopen, changewindowsopen] = useState<number>(0);
-  const [windowidlist, addwindowid] = useState<string[]>([]);
+  const [windowsopen, changewindowsopen] = useState<number>(4);
+  const [windowidlist, addwindowid] = useState<string[]>(['aboutme','socials','videocomponent','form']);
 
   
 
@@ -179,23 +179,23 @@ export default function Home() {
     
     <div className ='w-full flex justify-center'>
       <div className ='w-[1920px] h-[900px] z-0 fixed  xxsm:bottom-10 noselect  backgrounddark:opacity-50'>
-          <img src ='websitebackbackground_2_v2.apng' alt ='animatedbackground_2.gif'></img>
+          <img src ='websitebackbackground_2_v4.apng' alt ='animatedbackground_2.gif'></img>
       </div>
     </div>
 
 
     
     <div className='z-1 w-full h-full'>
-        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
+        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
           <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)} Windowbuttonfunction = {Windowbuttonfunction}/>
         </div>
-        <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
+        <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
           <Photoaboutme handlemousedown = {() => handlemousedown(changephotoaboutmeposition)} Windowbuttonfunction = {Windowbuttonfunction} />
         </div>
-        <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
-          <Videoplayer src = '/25_1.mp4' videos = {worklist}   handlemousedown = {() => handlemousedown(changevideoposition)} Windowbuttonfunction = {Windowbuttonfunction} />
+        <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
+          <Videoplayer loadingvideo = '/loading_1.mp4'initialvideo = '25_1.mp4' videos = {worklist}   handlemousedown = {() => handlemousedown(changevideoposition)} Windowbuttonfunction = {Windowbuttonfunction} />
         </div>
-        <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
+        <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
           <EmailForm  handlemouseformdown = {() => handlemousedown(changeformposition)} Windowbuttonfunction = {Windowbuttonfunction}></EmailForm>
         </div>
         <div style ={{ left: footerposition.x, top: footerposition.y, position:'absolute' }}>

@@ -5,19 +5,29 @@ import Workcolumn from './workcolumn';
 import {video_type} from '../data'
 
 
-function Videoplayer({src, videos, handlemousedown,Windowbuttonfunction}:{src:string, videos:video_type[], handlemousedown:() => void,Windowbuttonfunction:(divname:string) => void}){
+function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunction, loadingvideo}:{initialvideo:string, videos:video_type[], handlemousedown:() => void,Windowbuttonfunction:(divname:string) => void, loadingvideo:string}){
 
        //variables and useState variables used in the whole component
        const r2worker:string = 'https://r2-worker.akdaterao.workers.dev'
        const [url, setthumburl] = useState<video_type[]>([]);
-       const [currentvideo, changevideo] = useState<string>(src);
+       const [currentvideo, changevideo] = useState<string>(loadingvideo);
        const [currenttitle, changetitle] = useState<string>('Animation made with linework')
        const [currentdescription, changedescription] = useState<string>('This is a video ig')
 
+       //loads in the first video so that we dont have to package it with the website
+       useEffect(() =>{
+        async function load_firstvideo(){
+            const placeholdervideo = await fetch(`${r2worker}/${initialvideo}`)
+            const blob = await placeholdervideo.blob();
+            const blobURL = URL.createObjectURL(blob);
+            changevideo(blobURL);
+        };
+        load_firstvideo();
+       },[])
 
        //function which handles changing videos(this is drilled into the workcolumn since it using useState variables)
        async function child_changevideo(newvalue:string, newtitle:string, description:string) {
-        changevideo('/loading.mp4') //placeholder video
+        changevideo(loadingvideo) //placeholder video
         const fetchvideo = await fetch(`${r2worker}/${newvalue}`)
         const blob = await fetchvideo.blob();
         const blobURL = URL.createObjectURL(blob);
@@ -89,7 +99,7 @@ function Videoplayer({src, videos, handlemousedown,Windowbuttonfunction}:{src:st
                             {/*Video and description div*/}
                             <div className ='col-start-1 col-span-7 xxsm:col-start-1 xxsm:col-span-9 xsm:col-span-full \ row-start-1 row-span-10 \ md:col-start-0 md:col-span-7 \ ml-5 mr-5 md:ml-0 md:mr-0'>
                                 <div className ='w-5'/>
-                                <video ref={ref} src={currentvideo} muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-xl'/>
+                                <video ref={ref} src={currentvideo}  muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-xl'/>
                                 
                                 <div className ='flex flew-row \ w-full \ h-13'>
                                     <h3 className='text-4xl overflow-clip mt-3'>{currenttitle}</h3>
