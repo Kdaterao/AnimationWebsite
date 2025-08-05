@@ -16,7 +16,7 @@ function Tabbar ({handlemousedown,divname, Windowbuttonfunction}:{handlemousedow
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            className='h-3/4 hover:bg-[var(--color-variableblue)] focus:bg-[var(--color-variableblue)] hover:rounded text-[var(--color-textdescription)] hover:text-orange-400 focus:text-orange-400  ' onClick={() => Windowbuttonfunction(divname, 'x') }>
+                            className='h-3/4 hover:bg-[var(--color-variableblue)] focus-visible:bg-[var(--color-variableblue)] hover:rounded text-[var(--color-textdescription)] hover:text-orange-400 focus-visible:text-orange-400  ' onClick={() => Windowbuttonfunction(divname, 'x') }>
                             <line x1="18" y1="6" x2="6" y2="18" />
                             <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
