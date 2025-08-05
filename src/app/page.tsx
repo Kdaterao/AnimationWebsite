@@ -43,7 +43,7 @@ export default function Home() {
       changeformposition({x:110, y:950});
       changefooterposition({x:0, y:1900});
      } else if (window.innerWidth < 1620 && window.innerWidth > 1200){
-      changeaboutmeposition({x:320, y:70})
+      changeaboutmeposition({x:50, y:70})
       changephotoaboutmeposition({x:800, y:1400})
       changevideoposition({x:50, y:550});
       changeformposition({x:30, y:1450});
@@ -121,16 +121,18 @@ export default function Home() {
   
 
 
-  function Windowbuttonfunction(divname:string){
+  function Windowbuttonfunction(divname:string, from:string){
         
             const element:HTMLElement = document.getElementById(divname)!;
-            if (element.style.opacity === "100") {
+            if (from == 'x' && element.style.opacity == '100') {
+
+              setTimeout(() => {
                 element.style.pointerEvents = 'none';
                 element.style.transition = "opacity 0.1s";
                 element.style.opacity = '0';
                 changewindowsopen(windowsopen - 1)
                 console.log('minus')
-                
+                }, 200);
                 
                 const newlist = windowidlist.filter(x => x !== divname);
                 addwindowid(newlist);
@@ -140,10 +142,13 @@ export default function Home() {
                 const randomDiv = newlist[0];
                 const randomelement:HTMLElement = document.getElementById(randomDiv)!;
                 randomelement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+                } 
 
 
-            } else {
+            }else if(element.style.opacity == '100'){
+              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } else if(element.style.opacity == '0') {
                 element.style.pointerEvents = 'all';
                 element.style.transition = "opacity 0.4s ease";
                 element.style.opacity = '100';

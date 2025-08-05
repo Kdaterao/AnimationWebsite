@@ -4,7 +4,7 @@ import {Instagramicon, Tiktokicon} from '../data'
 
 
 
-function Photoaboutme({handlemousedown,Windowbuttonfunction}:{handlemousedown:() => void,Windowbuttonfunction:(divname:string) => void}){
+function Photoaboutme({handlemousedown,Windowbuttonfunction}:{handlemousedown:() => void,Windowbuttonfunction:(divname:string, from:string) => void}){
 
 
 

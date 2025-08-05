@@ -5,7 +5,7 @@ import Workcolumn from './workcolumn';
 import {video_type} from '../data'
 
 
-function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunction, loadingvideo}:{initialvideo:string, videos:video_type[], handlemousedown:() => void,Windowbuttonfunction:(divname:string) => void, loadingvideo:string}){
+function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunction, loadingvideo}:{initialvideo:string, videos:video_type[], handlemousedown:() => void,Windowbuttonfunction:(divname:string, from:string) => void, loadingvideo:string}){
 
        //variables and useState variables used in the whole component
        const r2worker:string = 'https://r2-worker.akdaterao.workers.dev'
@@ -99,7 +99,7 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
                             {/*Video and description div*/}
                             <div className ='col-start-1 col-span-7 xxsm:col-start-1 xxsm:col-span-9 xsm:col-span-full \ row-start-1 row-span-10 \ md:col-start-0 md:col-span-7 \ ml-5 mr-5 md:ml-0 md:mr-0'>
                                 <div className ='w-5'/>
-                                <video ref={ref} src={currentvideo}  muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-xl'/>
+                                <video ref={ref} src={currentvideo}  muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-sm'/>
                                 
                                 <div className ='flex flew-row \ w-full \ h-13'>
                                     <h3 className='text-4xl overflow-clip mt-3'>{currenttitle}</h3>

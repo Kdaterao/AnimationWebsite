@@ -3,7 +3,7 @@ import Dark_Switch from './switch'
 import Windowbuttonbar from './windowbutton'
 
 
-function Navbar({Windowbuttonfunction}:{Windowbuttonfunction: (divname:string) => void}){
+function Navbar({Windowbuttonfunction}:{Windowbuttonfunction: (divname:string, from:string) => void}){
 
 
 

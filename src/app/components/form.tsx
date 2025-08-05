@@ -3,7 +3,7 @@
 import Tabbar from './tabbar';
 
 
-function EmailForm({handlemouseformdown,Windowbuttonfunction}:{handlemouseformdown:() => void,Windowbuttonfunction:(divname:string) => void}){
+function EmailForm({handlemouseformdown,Windowbuttonfunction}:{handlemouseformdown:() => void,Windowbuttonfunction:(divname:string, from:string) => void}){
 
 
     async function handleOnSubmit(event: React.SyntheticEvent){
