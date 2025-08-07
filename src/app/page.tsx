@@ -28,51 +28,51 @@ export default function Home() {
   
 
   function handleResize(){
-
-    if (window.innerWidth > 1760){
+    const windowwidth = window.innerWidth;
+    if (windowwidth > 1760){
       changeaboutmeposition({x:30, y:200})
       changephotoaboutmeposition({x:950, y:945})
       changevideoposition({x:525, y:90});
       changeformposition({x:110, y:950});
       changefooterposition({x:0, y:1900});
     }
-    else if (window.innerWidth < 1760 && window.innerWidth > 1620){
+    else if (windowwidth < 1760 && windowwidth > 1620){
       changeaboutmeposition({x:5, y:200})
       changephotoaboutmeposition({x:950, y:945})
       changevideoposition({x:495, y:90});
       changeformposition({x:110, y:950});
       changefooterposition({x:0, y:1900});
-     } else if (window.innerWidth < 1620 && window.innerWidth > 1200){
+     } else if (windowwidth < 1620 && windowwidth > 1200){
       changeaboutmeposition({x:50, y:70})
       changephotoaboutmeposition({x:800, y:1400})
       changevideoposition({x:50, y:550});
       changeformposition({x:30, y:1450});
       changefooterposition({x:0, y:1900});
-    } else if(window.innerWidth < 1200 && window.innerWidth > 1025){
+    } else if(windowwidth < 1200 && windowwidth > 1025){
       changeaboutmeposition({x:100, y:70})
       changephotoaboutmeposition({x:660, y:1380})
       changevideoposition({x:0, y:550});
       changeformposition({x:20, y:1520});
       changefooterposition({x:0, y:1900});
-    } else if(window.innerWidth < 1025 && window.innerWidth > 900){
+    } else if(windowwidth < 1025 && windowwidth > 900){
       changeaboutmeposition({x:100, y:70})
       changephotoaboutmeposition({x:580, y:1140})
       changevideoposition({x:0, y:460});
       changeformposition({x:10, y:1230});
       changefooterposition({x:0, y:1600});
-    } else if(window.innerWidth < 900 && window.innerWidth > 765){
+    } else if(windowwidth < 900 && windowwidth > 765){
       changeaboutmeposition({x:30, y:80})
       changephotoaboutmeposition({x:150, y:1080})
       changevideoposition({x:0, y:450});
       changeformposition({x:5, y:1500});
       changefooterposition({x:0, y:1600});
-    } else if(window.innerWidth < 765 && window.innerWidth > 600){
+    } else if(windowwidth < 765 && windowwidth > 600){
       changeaboutmeposition({x:30, y:80})
       changephotoaboutmeposition({x:150, y:920})
       changevideoposition({x:0, y:310});
       changeformposition({x:5, y:1330});
       changefooterposition({x:0, y:1450});
-    }  else if(window.innerWidth < 600 && window.innerWidth > 0){
+    }  else if(windowwidth < 600 && windowwidth > 0){
       changeaboutmeposition({x:15, y:80})
       changephotoaboutmeposition({x:7, y:780})
       changevideoposition({x:7, y:310});
