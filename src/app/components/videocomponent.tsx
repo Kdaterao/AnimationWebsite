@@ -28,19 +28,19 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
        //function which handles changing videos(this is drilled into the workcolumn since it using useState variables)
        async function child_changevideo(newvalue:string, newtitle:string, description:string) {
         changevideo(loadingvideo) //placeholder video
-        const fetchvideo = await fetch(`${r2worker}/${newvalue}`)
-        const blob = await fetchvideo.blob();
-        const blobURL = URL.createObjectURL(blob);
-        changevideo(blobURL);
-        changetitle(newtitle);
-        changedescription(description);
-
         //--------scroll player widget to the top--------------
         const scrollableContainer: HTMLElement = document.getElementById('videocontainer')!;
         scrollableContainer.scrollTo({
         top:0,  
         behavior: 'smooth'
         })
+        //-------loads video in------------
+        const fetchvideo = await fetch(`${r2worker}/${newvalue}`)
+        const blob = await fetchvideo.blob();
+        const blobURL = URL.createObjectURL(blob);
+        changevideo(blobURL);
+        changetitle(newtitle);
+        changedescription(description);
        }
 
 
