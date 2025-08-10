@@ -34,6 +34,13 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
         changevideo(blobURL);
         changetitle(newtitle);
         changedescription(description);
+
+        //--------scroll player widget to the top--------------
+        const scrollableContainer: HTMLElement = document.getElementById('videocontainer')!;
+        scrollableContainer.scrollTo({
+        top:0,  
+        behavior: 'smooth'
+        })
        }
 
 
@@ -89,7 +96,7 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
                 <Tabbar handlemousedown = {handlemousedown} divname = 'videocomponent' Windowbuttonfunction = {Windowbuttonfunction} ></Tabbar>
 
 
-                <div className = 'flex flew-row \ h-13/16 w-full \ justify-start \ mt-6 \ overflow-y-scroll overflow-x-hidden styled-scrollbar '>
+                <div id='videocontainer' className = 'flex flew-row \ h-13/16 w-full \ justify-start \ mt-6 \ overflow-y-scroll overflow-x-hidden styled-scrollbar '>
                         {/*left side padding*/}
                         <div className ='w-0 md:w-10'></div>
 
@@ -98,8 +105,8 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
 
                             {/*Video and description div*/}
                             <div className ='col-start-1 col-span-7 xxsm:col-start-1 xxsm:col-span-9 xsm:col-span-full \ row-start-1 row-span-10 \ md:col-start-0 md:col-span-7 \ ml-5 mr-5 md:ml-0 md:mr-0'>
-                                <div className ='w-5'/>
-                                <video ref={ref} src={currentvideo}  muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-sm '/>
+                                <div  className ='w-5'/>
+                                <video id = 'videoelement'  ref={ref} src={currentvideo}  muted  controls loop playsInline className = 'shadow-2xl dark:shadow-gray-700 shadow-white object-scale-down rounded-sm '/>
                                 
                                 <div className ='flex flew-row \ w-full \ h-13'>
                                     <h3 className='text-4xl overflow-clip mt-3'>{currenttitle}</h3>
