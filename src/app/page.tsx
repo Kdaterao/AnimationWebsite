@@ -39,12 +39,12 @@ export default function Home() {
       changeaboutmeposition({x:5, y:200})
       changephotoaboutmeposition({x:950, y:945})
       changevideoposition({x:495, y:90});
-      changeformposition({x:110, y:950});
+      changeformposition({x:150, y:950});
       changefooterposition({x:0, y:1900});
      } else if ( window.innerWidth < 1620 &&  window.innerWidth > 1200){
       changeaboutmeposition({x:50, y:70})
       changephotoaboutmeposition({x:800, y:1400})
-      changevideoposition({x:50, y:550});
+      changevideoposition({x:100, y:550});
       changeformposition({x:30, y:1450});
       changefooterposition({x:0, y:1900});
     } else if( window.innerWidth < 1200 &&  window.innerWidth > 1025){
