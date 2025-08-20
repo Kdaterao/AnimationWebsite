@@ -13,6 +13,7 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
        const [currentvideo, changevideo] = useState<string>(loadingvideo);
        const [currenttitle, changetitle] = useState<string>('Animation made with linework')
        const [currentdescription, changedescription] = useState<string>('This is a video ig')
+       const [loading, isloading] = useState<boolean>(false)
 
        //loads in the first video so that we dont have to package it with the website
        useEffect(() =>{
@@ -27,6 +28,7 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
 
        //function which handles changing videos(this is drilled into the workcolumn since it using useState variables)
        async function child_changevideo(newvalue:string, newtitle:string, description:string) {
+        isloading(true)
         changevideo(loadingvideo) //placeholder video
         //--------scroll player widget to the top--------------
         const scrollableContainer: HTMLElement = document.getElementById('videocontainer')!;
@@ -38,6 +40,7 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
         const fetchvideo = await fetch(`${r2worker}/${newvalue}`)
         const blob = await fetchvideo.blob();
         const blobURL = URL.createObjectURL(blob);
+        isloading(false)
         changevideo(blobURL);
         changetitle(newtitle);
         changedescription(description);
@@ -77,8 +80,10 @@ function Videoplayer({initialvideo, videos, handlemousedown, Windowbuttonfunctio
         //required for playing videos
         const ref = useRef<HTMLVideoElement>(null);
         useEffect(() => {
-            if (ref.current) {
+            if (ref.current && loading === false) {
                 ref.current.pause();
+            } else if (ref.current){
+                ref.current.play();
             }
         },[currentvideo]);
 
