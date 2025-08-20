@@ -11,7 +11,6 @@ export default function Row_WorkColumn({title, description, imagepath, videokey,
                     <div className = ' rounded-md overflow-hidden text-wrap '>
                         <h3 className = 'text-xl p-1 text-[var(--color-textdescription)]'>{title}</h3>
                     </div>
-                    <p className = 'text-base text-[var(--color-textdescription)]'>{description}</p>
                 </div>
         </div> 
         )
