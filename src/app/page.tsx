@@ -114,8 +114,8 @@ export default function Home() {
   };
   //---------------------------------------------------
 
-  const [windowsopen, changewindowsopen] = useState<number>(4);
-  const [windowidlist, addwindowid] = useState<string[]>(['aboutme','socials','videocomponent','form']); //['aboutme','socials','videocomponent','form']
+  const [windowsopen, changewindowsopen] = useState<number>(0);
+  const [windowidlist, addwindowid] = useState<string[]>([]); //['aboutme','socials','videocomponent','form']
 
   
 
@@ -190,16 +190,16 @@ export default function Home() {
 
     
     <div className='z-1 w-full h-full'>
-        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
+        <div id='aboutme' style ={{ left: aboutmeposition.x, top: aboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <Aboutme handlemousedown = {() => handlemousedown(changeaboutmeposition)} Windowbuttonfunction = {Windowbuttonfunction}/>
         </div>
-        <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
+        <div id ='socials' style ={{ left: photoaboutmeposition.x, top: photoaboutmeposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <Photoaboutme handlemousedown = {() => handlemousedown(changephotoaboutmeposition)} Windowbuttonfunction = {Windowbuttonfunction} />
         </div>
-        <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
+        <div id ='videocomponent' style ={{ left: videoposition.x, top: videoposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <Videoplayer loadingvideo = '/loading_1.mp4'initialvideo = '25_1.mp4' videos = {worklist}   handlemousedown = {() => handlemousedown(changevideoposition)} Windowbuttonfunction = {Windowbuttonfunction} />
         </div>
-        <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:100, pointerEvents:'all' }}>
+        <div id='form' style ={{ left: formposition.x, top: formposition.y, position:'absolute',opacity:0, pointerEvents:'all' }}>
           <EmailForm  handlemouseformdown = {() => handlemousedown(changeformposition)} Windowbuttonfunction = {Windowbuttonfunction}></EmailForm>
         </div>
         <div style ={{ left: footerposition.x, top: footerposition.y, position:'absolute' }}>
