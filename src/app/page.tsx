@@ -114,8 +114,8 @@ export default function Home() {
   };
   //---------------------------------------------------
 
-  const [windowsopen, changewindowsopen] = useState<number>(0);
-  const [windowidlist, addwindowid] = useState<string[]>([]); //['aboutme','socials','videocomponent','form']
+  const [windowsopen, changewindowsopen] = useState<number>(4);
+  const [windowidlist, addwindowid] = useState<string[]>(['aboutme','socials','videocomponent','form']); //['aboutme','socials','videocomponent','form']
 
   
 
